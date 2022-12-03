@@ -217,14 +217,28 @@ font-weight: 700;
  background: #fff;
 }
 &__item:nth-child(3) {
-  height: 400px;
+  height: 500px;
   background-image: url('../../../assets/images/banner/tips.jpg');
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
+ }
+ &__item:nth-child(3)::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -12%;
+  height: 100%;
+  width: 65%;
+  background: #fff;
+  transform: skew(15deg);
+  z-index: 1;
  }
 
  &__item:nth-child(4) { 
-  background-color: aquamarine;
+  background-color: #fbfbfb;
+  padding: 85px 0 80px;
+  height: 112vh;
  }
  &__item:nth-child(5) {
   height: 400px;
@@ -341,6 +355,7 @@ font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   &__title {
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -379,7 +394,221 @@ font-weight: 700;
     }
     
   }
+  
+}
+.travel-tips {
+&__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  width: 35%;
+  left: 260px;
+  top: 40px;
+  padding: 15px;
+}
+  &__title {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 600;
+  color: #444;
+  margin-top: 0;
+  line-height: 1.5;
+  width: 100%;
+  margin: 0 0 40px 10px;
+  align-self: flex-start;
+}
+&__text {
+  margin-bottom: 15px;
+  color: #555;
+  text-align: start;
+  line-height: 1.5;
+}
+&__play {
+    height: 80px;
+    width: 80px;
+    border: 1px dashed #fff;
+    border-radius: 50%;
+    padding: 25px 0 25px 5px;
+    background: #d60d45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+&__icon {
+  width: 40px;
+  height: 40px;
+}
+}
+.events {
+  &__icon-wrapper {
+    display: inline-block;
+    background: 0 0;
+    z-index: 1;
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 15px;
+  }
+   
+     &__icon-wrapper::before{
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background: #333;
+      content: '';
+      left: -100px;
+      top: 50%;
+     }
+  
+     &__icon-wrapper::after{
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background: #333;
+      content: '';
+      right: -100px;
+      top: 50%;
+  }
+  &__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #444;
+    margin-top: 0;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
 
+  &__text {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+}
+
+//event
+
+
+.np {
+  padding: 0px;
+}
+
+.featuredPropBox {
+ width: 70%;
+ margin: 0 auto;
+}
+
+.featuredPropBox ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: outside none none;
+  padding: 0;
+}
+
+.featuredPropBox ul li {
+  background-color: #eeeeee;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+  height: 350px;
+  margin: 5px;
+  width: 350px;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.featuredPropBox ul li:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(22, 22, 22, 0.6);
+  transition: all 0.3s;
+}
+
+.featuredPropBox ul li:nth-child(1) {
+  background-image: url('../../../assets/images/events/venezia.webp');
+}
+
+.featuredPropBox ul li:nth-child(2) {
+  background-image: url('../../../assets/images/events/butterfly.webp');
+}
+
+.featuredPropBox ul li:nth-child(3) {
+  background-image: url('../../../assets/images/events/tree-japan.webp');
+}
+
+.featuredPropBox ul li:nth-child(4) {
+  background-image: url('../../../assets/images/events/event-turkey.webp');
+}
+
+.featuredPropBox ul li:nth-child(5) {
+  background-image: url('../../../assets/images/events/switzerland.webp');
+}
+.featuredPropBox ul li:nth-child(6) {
+  background-image: url('../../../assets/images/events/wales-air.webp');
+}
+
+
+
+.featuredPropBox ul li .fplogo {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  z-index: 1;
+  transition: all 0.3s;
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.featuredPropBox ul li .fplogo img {
+  width: 100%;
+}
+
+.featuredPropBox ul li .fptext {
+  display: none;
+  font-size: 16px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease 0s;
+  width: 65%;
+  z-index: 1;
+}
+
+.featuredPropBox ul li .fptext p {
+  color: #fff;
+  margin: 0px;
+}
+
+.featuredPropBox ul li:hover {
+  box-shadow: 0 0 0 25px rgba(0, 0, 0, 0.2) inset;
+}
+
+.featuredPropBox ul li:hover:after {
+  background-color: rgba(22, 22, 22, 0.3);
+}
+
+.featuredPropBox ul li:hover .fplogo {
+  display: none;
+}
+
+.featuredPropBox ul li:hover .fptext {
+  display: block;
 }
 
 

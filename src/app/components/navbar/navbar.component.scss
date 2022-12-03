@@ -17,6 +17,9 @@
 
     background: #fff;
     border: 1px solid #fff;
+    z-index: 99999;
+    box-shadow: 0 0 5px #ccc;
+    position: fixed!important;
 
   &__icon {
     width: 50px;

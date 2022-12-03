@@ -5,14 +5,14 @@ import SwiperCore, { Keyboard, Pagination, Navigation, Virtual, Swiper } from 's
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
-
 @Component({
-  selector: 'app-swiper-slider',
-  templateUrl: './swiper-slider.component.html',
-  styleUrls: [ './swiper-slider.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'app-popular-posts-slider',
+  templateUrl: './popular-posts-slider.component.html',
+  styleUrls: ['./popular-posts-slider.component.scss']
+  // encapsulation: ViewEncapsulation.None,
 })
-export class SwiperSliderComponent implements OnInit {
+export class PopularPostsSliderComponent implements OnInit {
+
   public posts = [
     {}, 'post2', 'post3'
   ]

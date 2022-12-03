@@ -41,6 +41,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { VideoComponent } from './components/video/video.component';
 import { SwiperModule } from 'swiper/angular';
 import { SwiperSliderComponent } from './swiper-slider/swiper-slider.component';
+import { PopularPostsSliderComponent } from './popular-posts-slider/popular-posts-slider.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { SwiperSliderComponent } from './swiper-slider/swiper-slider.component';
     WeatherComponent,
     VideoComponent,
     SwiperSliderComponent,
+    PopularPostsSliderComponent,
   ],
   imports: [
     NgxYoutubePlayerModule.forRoot(),

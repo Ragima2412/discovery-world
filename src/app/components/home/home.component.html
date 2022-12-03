@@ -54,27 +54,45 @@
             </div>
          </div> 
    </div>
+   
+            <div class="home__container popular-posts">
+               <h2 class="popular-posts__title">All Posts</h2>
+               <div class="popular-posts__icon-wrapper">
+                  <img class="popular-posts__icon" src="../../../assets/icons/diamond.png" alt="diamond" />
+               </div>
+               <p class="popular-posts__text">Start your journey with our top travelers and their stories</p>
+              <app-swiper-slider></app-swiper-slider>
+            </div>
 
    <div class="home__parallax-container parallax">
-      <div class="parallax__wrapper">
-         <div class="home__popular-posts">
-           <app-swiper-slider></app-swiper-slider>
-         </div>
+      <div class="parallax__wrapper" >
          <div class="parallax__item">
-            <div class="parallax__item-content">DIV2</div>
+            <div class="parallax__overlay"></div> 
+           <div class="parallax__posts-content">
+               <h2 class="parallax__posts-title posts">Popular posts</h2>
+               <div class="parallax__item-content">
+                  
+                  <div class="posts__icon-wrapper">
+                     <img class="posts__icon" src="../../../assets/icons/white-diamond.png" alt="diamond" />
+                  </div>
+                  <h6 class="posts__text">Our more popular posts with amazing experiences</h6>
+                  <app-popular-posts-slider></app-popular-posts-slider>
+               
+               </div>
+             </div>
          </div>
          <div class="parallax__item" id="parallax">           
-            <div class="parallax__overlay"></div>
             <div class="parallax__item-content">DIV1</div>
+
          </div>
          <div class="parallax__item">
-            <div class="parallax__item-content">DIV2</div>
+            <div class="parallax__overlay"></div>
          </div>
          <div class="parallax__item">
             <div class="parallax__item-content">DIV3</div>
-            <div class="parallax__overlay"></div>
          </div>
          <div class="parallax__item">
+            <div class="parallax__overlay"></div>
             <div class="parallax__item-content">DIV4</div>
          </div>
          <div class="parallax__item">

@@ -1,0 +1,46 @@
+<div class="app__posts posts">
+
+  <div class="posts__header">
+    <div class="posts__search-wrapper">
+      <input class="posts__search" type="text" placeholder="Search" [(ngModel)]="cityName">
+      <img  class="posts__search-icon" src="../../../assets/icons/search.png" alt="search icon" />
+      <span  class="tooltip-toggle popup" aria-label="Sample text for your tooltip!" tabindex="0">
+           <span class="popuptext" id="newPostPopup">Please register or login</span>                         
+      </span>
+    </div>   
+    <button class="posts__new-post" href="posts/add" (click)="onNewPostClick()">New Post</button>
+
+  </div>
+  <div class="posts__pages-table">
+    <label class="posts__pages-label" for="noOfRows">Posts per Page</label>  
+      <select class="posts__pages-selector"  style=" margin-top: -5px; color: green; height:30px; background:white; display: block; border-radius: 5px; border: 1px solid #32a8a6; box-shadow: none;" name="noOfRows" (change)="onTableSizeChange($event)" class="form-select form-select-sm">
+        <option style=" margin-top: -5px; ;color: green; height:30px; background:white; display: block; border-radius: 5px; border: 1px solid #32a8a6; box-shadow: none;" *ngFor="let size of tableSize" [ngValue]="size">
+          {{ size }}
+        </option>
+      </select> 
+  </div>
+
+  <div class="posts__no-item-wrapper" *ngIf="isLoading == false && !posts.length">
+ 
+    <p class="posts__no-item">No item to display</p>
+  </div>
+  <div  *ngIf="isLoading == true">
+    <app-spinner></app-spinner>
+  </div>
+
+  <!-- <div class="posts__error-wrapper" *ngIf="!isLoading && errorMessage">
+   <p class="posts__error">{{errorMessage}}</p>
+  </div> -->
+
+  <div class="posts__list">
+    <ng-container *ngFor="let post of (posts | filter: cityName)| paginate : pagingConfig; let i = index" >
+      <div class="posts__item" *ngIf="post">
+        <app-post [user]='user' [post]='post'></app-post>
+      </div>
+    </ng-container>
+  </div>
+  <div class="posts__pagination-controls">
+    <pagination-controls  previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+  </div>
+</div>

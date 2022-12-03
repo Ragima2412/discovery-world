@@ -1,0 +1,28 @@
+<div class="app__weather-wrapper">
+    <app-back-arrow></app-back-arrow>
+    <div class="app__weather weather">
+        <div class="weather__row">
+            <div class="weather__location">
+                <p class="weather__city">{{location?.name}}</p>
+                <p class="weather__country">{{location?.country}}</p>
+            </div>
+            <div class="weather__location-details">
+                <p><b>lat:</b> {{location.lat}}</p>
+                <p><b>long:</b> {{location.lon}}</p>
+            </div>
+        </div>
+        <div class="weather__current">
+            <div class="weather__current-image">
+                <img  src="../../../assets/icons/weather/1.png" alt="weather-icon" />
+            </div>
+           <p class="weather__current-temperature">{{currentWeather.temp_c > 0 ? '+' : null}}{{currentWeather.temp_c + celcMark}}</p>
+        </div>
+          <div class="weather__days" >
+            <div class="weather__day" *ngFor="let day of weatherData">
+                <p class="weather__weekday">{{day.weekday}}</p>
+                <p> {{day.day.maxtemp_c > 0 ? '+' : null}}{{day.day.maxtemp_c + celcMark}}</p>
+                </div>
+        </div>      
+    </div>
+</div>
+   

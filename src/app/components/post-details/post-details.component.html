@@ -1,0 +1,62 @@
+<div class="app__detailed-post detailed-post" >
+    <div class="detailed-post__wrapper">
+        <div class="detailed-post__image">
+            <img src="{{'data:image/jpg;base64,' + post.photo}}" alt="photo" />
+        </div>
+        <div class="detailed-post__content">
+            <p class="detailed-post__cityName">{{post.cityName}}</p>
+            <div class="detailed-post__tags">
+                <p class="detailed-post__tag" *ngFor="let tag of tags">{{tag}}</p>
+            </div>
+            <div class="detailed-post__addition-icons">
+                <span (click)="onLocation(post.cityName)"><img class="detailed-post__add-icon"   src="../../../assets/icons/location2.png" alt="location" /></span>        
+                <span (click)="onWeatherClick()"><img class="detailed-post__add-icon" src="../../../assets/icons/weather2.png" alt="weather" /></span> 
+                <span (click)="onVideoClick()"><img class="detailed-post__add-icon" src="../../../assets/icons/youtube2.png" alt="youtube" /></span>      
+            </div>
+            <p class="detailed-post__description">{{post.description}}</p>
+            <p class="detailed-post__created-title">Created by: </p>
+            <span class="detailed-post__created">
+                <div class="detailed-post__createdIcon"
+                [style.background-image]="'url(' + postCreatedUser?.photoUrl + ')'">
+              </div>
+                <p>{{postCreatedUser?.firstname + postCreatedUser?.lastname}}</p>
+            </span>
+               <p class="detailed-post__date">{{post.dateOfCreate }}</p>
+            <hr style="color:gray;background-color:gray">
+            <div class="detailed-post__comments">
+                <p class="detailed-post__comments-title">Comments</p>            
+                <div class="detailed-post__comments-content">
+                    <div class="detailed-post__comments-item" *ngFor="let comment of comments"> 
+                        <div class="detailed-post__comments-row">
+                            <div class="detailed-post__createdIcon" [style.background-image]="'url(' + comment?.user?.photoUrl + ')'" ></div>
+                            <div class="detailed-post__comments-row">
+                                <p>{{comment?.user?.firstname}} {{comment?.user?.lastname}}</p>
+                                <p class="detailed-post__comments-date">{{comment?.dateOfCreate | dateAgo}}</p>
+                             </div>
+                        </div>
+                        <div class="detailed-post__comments-column">                         
+                            <p class="detailed-post__comments-text"> {{comment.text}}</p>
+                        </div>                        
+                    </div>
+                  
+                </div> 
+            </div>
+            <hr style="color:gray;background-color:gray">
+            <div class="detailed-post__icons" >
+                <!-- <span (click)="$event.stopPropagation()"><img class="detailed-post__icon" src="../../../assets/icons/comments.png" alt="comments" />{{post.comments.length-1}}</span> -->
+                <!-- <div class="container">
+                     <div class="label">
+                          <span (click)="onLikes($event)" class="tooltip-toggle popup" (click)="onLikesClick($event, post)" aria-label="Sample text for your tooltip!" tabindex="0">
+                               <span class="popuptext" id="myPopup">Please register or login</span>
+                              <img class="detailed-post__icon" [attr.src]= "[isLiked === true ? '../../../assets/liked.png' : '../../../assets/unliked.png']"  alt="likes" />{{this.likes.length - 1}}
+                            </span>        
+                     </div>
+                </div> -->
+                <span *ngIf="user.id" (click)="onEdit($event, post)"><img class="detailed-post__icon"   src="../../../assets/icons/edit.png" alt="edit" /></span>        
+                <span *ngIf="user.id" (click)="onDelete($event,post)"><img class="detailed-post__icon" src="../../../assets/icons/delete.png" alt="delete" /></span> 
+           </div>
+        </div>
+       
+    </div>
+    <app-back-arrow link="/posts" [position]=true></app-back-arrow>
+</div>

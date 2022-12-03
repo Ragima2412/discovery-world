@@ -1,0 +1,13 @@
+ .app {
+    &__map-wrapper {
+        padding-top: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    &__map {
+        width: 95%; 
+        height: 85vh;
+    }
+ }

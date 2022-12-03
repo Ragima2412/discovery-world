@@ -1,0 +1,86 @@
+.app {
+    &__weather-wrapper {
+      padding-top: 180px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    
+    }
+    &__weather {
+     height: 75vh;
+     padding: 110px 0 0 0;
+     width: 50%;
+     min-width: 50%;
+     min-height: 50%;
+     padding: 70px;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: start;
+     background: hsl(0 0% 100%);
+     color: rgb(29, 55, 69);
+     line-height: 1.5;
+     font-size: 1.5rem;
+     font-weight: 300;
+     border-radius: 2ch;
+     border: 1px solid rgb(228, 225, 225);
+     box-shadow: 1.5rem 2.5rem 2rem -2rem hsl(200 50% 20% / 40%);
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    } 
+}
+.weather {
+  &__city {
+    font-size: 54px;
+    display: block;
+    line-height: 1.6rem;
+    margin-bottom: 20px;
+  }
+  &__country {}
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: start;
+  }
+
+  &__location-details {
+    font-size: 18px;
+    b {
+      margin-right:5px ;
+    }
+  }
+
+  &__current-image {   
+    width: 100px;
+    height:100px;
+    display: flex;
+    margin-top: 10px;
+  }
+  &__current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+  }
+  &__current-temperature {
+    font-size: 45px;    
+  }
+  &__current-image{
+    margin-right: 60px;
+  }
+
+  &__weekday{
+    width: 100px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  &__day {
+    padding: 10px 50px;
+    border-top: 1px solid rgb(196, 192, 192);
+    display: flex;
+    width: 500px;
+    gap: 60px;
+  }
+}

@@ -242,7 +242,7 @@ font-weight: 700;
  }
  &__item:nth-child(5) {
   height: 400px;
-  background-image: url('../../../assets/images/banner/tropic.jpg');
+  background-image: url('../../../assets/images/banner/spain.jpg');
   background-size: cover;
   background-attachment: fixed;
  }
@@ -544,7 +544,7 @@ font-weight: 700;
 }
 
 .featuredPropBox ul li:nth-child(3) {
-  background-image: url('../../../assets/images/events/tree-japan.webp');
+  background-image: url('../../../assets/images/events/venezia.webp');
 }
 
 .featuredPropBox ul li:nth-child(4) {
@@ -612,4 +612,178 @@ font-weight: 700;
 }
 
 
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 100vw;
+  height: 30vh;
+  background: fff;
+  z-index: 10;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 30px;
+  text-align: center;
+  background: white;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 18px;
+  transition: all .4s ease;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 90px;
+  width: 90px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin: 0 10px;
+  transition: transform 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+  border: 3px solid white;
+  transform: scale(1.2);
+
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {
+  margin-top: 10px;
+  color: #2195c3;
+}
+.quotes1 {
+  background-image: url('../../../assets/images/userPhotos/user1.jpg');
+  background-size: cover;
+}
+.quotes2 {
+  background-image: url('../../../assets/images/userPhotos/user3.jpeg');
+  background-size: cover;
+}
+.quotes3 {
+  background-image: url('../../../assets/images/userPhotos/user2.jpg');
+  background-size: cover;
+}
  
+.footer {
+  background: #060c17;
+  height: 50vh;
+  padding-top: 170px;
+  &__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    margin-top: 0;
+    line-height: 1.5;
+  }
+
+  &__icon-wrapper {
+      display: inline-block;
+      background: 0 0;
+      z-index: 10;
+      position: relative;
+      padding: 0 20px;
+      margin-bottom: 10px;
+    }
+    &__text {
+      color: #fff;
+      font-size: 15px;
+    }
+    &__icon-wrapper::before{
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background: #fff;
+      content: '';
+      left: -100px;
+      top: 50%;
+    }
+    
+    &__icon-wrapper::after{
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background: #fff;
+      content: '';
+      right: -100px;
+      top: 50%;   
+    }
+    &__copyright {
+      color: white;
+      font-size: 12px;
+      margin-top: 35px;
+    }
+}
+.form {
+  position: relative;
+  &__control {
+    font-size: 14px;
+    font-family: roboto,sans-serif;
+    font-weight: 300;
+    background-color: #fff;
+    border: 1px solid #eceaea;
+    border-radius: 0;
+    padding: 10px 25px;
+    width: 25%;
+    color: #444;
+    height: auto;
+    margin: 35px 0;
+    box-shadow: none;
+  }
+  &__button {
+    right: 0;
+    top: 0;
+    padding: 10px;
+    background: #d60d45;
+    color: #fff;
+  }
+}

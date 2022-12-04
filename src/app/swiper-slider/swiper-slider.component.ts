@@ -27,16 +27,6 @@ export class SwiperSliderComponent implements OnInit {
       Array.from({ length: 50 }).map((el, index) => `Slide ${index + 1}`)
     );
   }
-
-
-  // thumbsSwiper: any;
-  // setThumbsSwiper(swiper: any) {
-  //   this.thumbsSwiper = swiper;
-  // }
-  // controlledSwiper: any;
-  // setControlledSwiper(swiper: any) {
-  //   this.controlledSwiper = swiper;
-  // }
   
   setSwiperInstance(swiper: Swiper) {
     setInterval(() => {

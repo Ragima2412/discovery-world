@@ -1,7 +1,8 @@
 <div class="app__form-wrapper">
+  <div class="form__overlay"></div>
   <form [formGroup]="registerForm" class="app__register form" (ngSubmit)="onRegister()" novalidate>
     <p class="form__title">Sign Up</p>
-  
+    <p class="form__notice">Enter your details to be a member</p>
     <div>
       <input class="form__form-control" type="text" id="firstname" name="firstname" formControlName="firstname"
         placeholder="Firstname">
@@ -37,5 +38,4 @@
   <ng-template #errorWrapper>
     <div class="form__noAlert"></div>
   </ng-template>
-  <app-back-arrow></app-back-arrow>
 </div>

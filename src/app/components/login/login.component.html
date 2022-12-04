@@ -1,6 +1,8 @@
-<div class="app__login-wrapper">
+<div class="app__form-wrapper">
+  <div class="form__overlay"></div>
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="app__login form" novalidate>
        <p class="form__title">Sign In</p>
+       <p class="form__notice">Register if you don't have an account</p>
        <div>
           <input class="form__form-control" (ngModelChange)="onInputChange()" type="text" formControlName="username" id="username" name="username" placeholder="Username">
           <div class="form__alert" *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched; else errorWrapper">
@@ -21,12 +23,11 @@
     <p class="form__error-message">{{errorMessage ||  null}}</p>
     <button id="btn" class="form__submit-btn" [disabled]="loginForm.invalid">Sign in</button>
 
-    <p class="form__notice">Not a member?
+    <p class="form__register-notice">Not a member?
       <a class="form__register-link" routerLink="/register">Register</a>
     </p>  
   </form>
   <ng-template #errorWrapper>
       <div class="form__noAlert"></div>
     </ng-template>
-    <app-back-arrow></app-back-arrow>
 </div>

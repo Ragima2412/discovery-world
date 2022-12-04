@@ -10,8 +10,8 @@
         <span class="navbar__user-icon" *ngIf="user.photo" [style.background-image]="'url(' +  user.photo  + ')'"></span> 
       </div>
     <div class="navbar__links" *ngIf="!isAuth; else logout">
-      <a class="navbar__link" routerLink="/login">Home</a>
-      <a class="navbar__link" routerLink="/login">Gallery</a>
+      <a class="navbar__link" routerLink="/home">Home</a>
+      <a class="navbar__link" routerLink="/posts">Posts</a>
        <a class="navbar__link" routerLink="/login">Login</a>
        <a class="navbar__link" routerLink="/register">Sign Up</a>
     </div>   

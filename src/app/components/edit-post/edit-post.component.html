@@ -1,5 +1,5 @@
 <div class="app__form-wrapper"> 
-  <app-back-arrow link="/posts" [position]=true></app-back-arrow> 
+  <div class="form__overlay"></div>
   <form [formGroup]="editForm" class="app__edit-form form " (ngSubmit)="onSubmit()" novalidate>
       <p class="form__title">Edit Post</p>  
       <div>
@@ -16,7 +16,7 @@
           <div class="form__spinner-wrapper" *ngIf="isLoading">
              <img  class="form__spinner" src="../../../assets/spinner2.gif" alt="spinner"/>
           </div>
-          <input class="form__form-control"   type="file" id="photoUrl" name="photoUrl" formControlName="photoUrl"  onchange="onPhotoLoading()" 
+          <input class="form__form-control choose-photo" data-text="Select your file!" type="file" id="photoUrl" name="photoUrl" formControlName="photoUrl"  onchange="onPhotoLoading()" 
           (change)="onFileSelected($event)"
           placeholder="Photo">      
           <div class="form__alert" *ngIf="editForm.get('password')?.invalid && editForm.get('password')?.touched; else errorWrapper">

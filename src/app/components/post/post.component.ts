@@ -25,6 +25,7 @@ export class PostComponent implements OnInit {
   public isHidden: boolean = true;
   public allUsers: any;
   public usersIconList: any;
+  public dateOfCreate: string;
 
 @Input()
 public post: Post;
@@ -44,6 +45,9 @@ public user: User;
     this.likes = Object.values(this.post.likes);
     this.comments = Object.values(this.post.comments);
     this.tags = this.post.tags.split(',').map(tag  => `#${tag}`);
+    this.dateOfCreate = this.post.dateOfCreate.split(' ').slice(1).join(' ');
+
+    
     this.getAllUsers();
   }
 

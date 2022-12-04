@@ -28,7 +28,9 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
   public postCreatedUser: any;
   public comments: any = [];
   public commentCreatedUser: any; 
-  private destroy$: Subject<void> = new Subject<void>();
+  private destroy$: Subject<void> = new Subject<void>(); 
+  public newComment = '';
+  public isHidden: boolean = true;
 
   constructor(
     private storageService: StorageService,
@@ -39,7 +41,7 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     private router: Router,
     private getCityDataService: GetCityDataService,
     private videoDataService: VideoDataService,
-    ) {  
+    ) {        
     this.getUserData('userData');
     this.getPost();
   }
@@ -118,9 +120,18 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     }) 
      ////////////////////////////////////////////////////////////////////////////   
   }
-  getTags() {
-
- }
+  onCommentClick($event: any) {
+    this.isHidden = !this.isHidden;
+    this.postsDataService.addComment(this.post, this.user.id, this.newComment )
+    this.onStopPropogation($event);
+    this,this.newComment='';
+    if(!this.user.id) {
+      this.isHidden = true;
+    }
+  }
+  onStopPropogation($event: any) { 
+    $event.stopPropagation();
+   }
 
   filterUser(comment: any) {
     this.commentCreatedUser = this.users && this.users.find(user => this.user.id === comment.userId);

@@ -1,15 +1,14 @@
-<div class="post" (click)="onClick(post)">
+ <div class="post" (click)="onClick(post)">
      <div class="post__image-wrapper">
+          <div class="post__overlay"></div>
           <img class="post__image" src="{{'data:image/jpg;base64,' + post.photo}}" alt="photo" />
      </div>
      <div class="post__content">
-          <div class="post__tags" >
-               <p class="post__tag" *ngFor="let tag of tags">{{tag}}</p>
-          </div>
-          <p class="post__title">{{post.cityName}}</p>
-          <span class="post__description">{{post.description}}...
+     <div class="post__date">Posted On: {{dateOfCreate}}</div>
+          <h6 class="post__title">{{post.cityName}}</h6>
+          <span class="post__description">{{post.description.slice(0,200)}}...
           </span>
-          <p class="post__read-more" *ngIf="post.description.length > 224; else noReadMore" (click)="onClick(post)">Read more</p>
+          <p class="post__read-more" *ngIf="post.description.length > 110; else noReadMore"></p>
           <div class="post__icons" >
                
                <div class="label">

@@ -42,7 +42,6 @@ export class PostsDataService {
   onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
   this.post = data;
-  console.log('service post', data)
   this.post$.next(data);
 });
   }

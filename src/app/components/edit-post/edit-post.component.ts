@@ -76,7 +76,6 @@ export class EditPostComponent implements OnInit {
 
   onSubmit() {
     const formValue = this.editForm.value;
-    console.log('edirFrom', this.editForm)
     const editPost = {
       ...this.post,
       dateOfUpdate: new Date().toString(),
@@ -93,6 +92,5 @@ export class EditPostComponent implements OnInit {
    if(this.base64Output) {
     this.isLoading = false;
    }
-  //  console.log(event.target.files)
   }
 }

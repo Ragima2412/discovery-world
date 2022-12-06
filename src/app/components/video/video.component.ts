@@ -8,7 +8,6 @@ import { VideoDataService } from 'src/app/services/video-data/video-data.service
     template: `
  <div class="app__video-wrapper">
   <div class="app__video">
-    <app-back-arrow [position]="true"></app-back-arrow>
     <youtube-player
       [width]="800"
       [height]="700"
@@ -231,7 +230,6 @@ export class VideoComponent implements OnInit {
         console.log('player instance', player);
     }
     onStateChange(event: any) {
-        console.log('player state', event.data);
     }
 
 }

@@ -8,32 +8,37 @@
           <h6 class="post__title">{{post.cityName}}</h6>
           <span class="post__description">{{post.description.slice(0,200)}}...
           </span>
-          <p class="post__read-more" *ngIf="post.description.length > 110; else noReadMore"></p>
           <div class="post__icons" >
-               
-               <div class="label">
-                    <div (click)="onStopPropogation($event)"  class="tooltip-toggle popup"  aria-label="Sample text for your tooltip!" tabindex="0">
-                         <span class="popuptext" id="commentPopup">Please register or login</span>
-                         <span (click)="onCommentIconClick($event)" ><img class="post__icon" src="../../../assets/icons/comments.png" alt="comments" />{{this.comments.length-1}}</span>                      
-                    </div>
-               </div>
-
-
-               <!-- <span (click)="onCommentIconClick($event)"><img class="post__icon" src="../../../assets/icons/comments.png" alt="comments" />{{this.comments.length-1}}</span> -->
-               <div class="container">
+               <span class="post__user-info">
+                    <img class="post__user-icon" src="../../../assets/icons/icon-user.png" alt="likes" />
+                    <p class="post__user-name">{{user.firstname  + " " + user.lastname}}</p>
+               </span>
+               <div class="post__like-icons">
                     <div class="label">
-                         <span (click)="onStopPropogation($event)" class="tooltip-toggle popup" (click)="onLikesClick($event, post)" aria-label="Sample text for your tooltip!" tabindex="0">
-                              <span class="popuptext" id="myPopup">Please register or login</span>
-                              <img class="post__icon" [attr.src]= "[isLiked === true ? '../../../assets/liked.png' : '../../../assets/unliked.png']"  alt="likes" />{{this.likes.length - 1}}                          
-                              <div class="post__user-liked" id="user-liked" *ngIf="usersIconList?.length">
-                                   <img class="post__user-liked-icon" *ngFor="let userIcon of usersIconList" src={{userIcon}} alt="icon"/>
-                              </div>
-                         </span>
+                         <div (click)="onStopPropogation($event)"  class="tooltip-toggle popup"  aria-label="Sample text for your tooltip!" tabindex="0">
+                              <span class="popuptext" id="commentPopup">Please register or login</span>
+                              <span (click)="onCommentIconClick($event)" >
+                                   <img class="post__icon" src="../../../assets/icons/comments.png" alt="comments" />
+                                   {{this.comments.length-1}}</span>                      
+                         </div>
                     </div>
+                    <div class="container">
+                         <div class="label">
+                              <span (click)="onStopPropogation($event)" class="tooltip-toggle popup" (click)="onLikesClick($event, post)" aria-label="Sample text for your tooltip!" tabindex="0">
+                                   <span class="popuptext" id="myPopup">Please register or login</span>
+                                   <img class="post__icon" [attr.src]= "[isLiked === true ? '../../../assets/liked.png' : '../../../assets/unliked.png']"  alt="likes" />
+                                   {{this.likes.length - 1}}                          
+                                   <!-- <div class="post__user-liked" id="user-liked" *ngIf="usersIconList?.length">
+                                        <img class="post__user-liked-icon" *ngFor="let userIcon of usersIconList" src={{userIcon}} alt="icon"/>
+                                   </div> -->
+                              </span>
+                         </div>
+                    </div>
+
                </div>
-               <span *ngIf="user.id" (click)="onEdit($event, post)"><img class="post__icon"   src="../../../assets/icons/edit.png" alt="edit" /></span>  
-               <span *ngIf="user.id" (click)="onDelete($event,post)"><img class="post__icon" src="../../../assets/icons/delete.png" alt="delete" /></span> 
-             
+               <!-- <span *ngIf="user.id" (click)="onEdit($event, post)"><img class="post__icon"   src="../../../assets/icons/edit.png" alt="edit" /></span>  
+               <span *ngIf="user.id" (click)="onDelete($event,post)"><img class="post__icon" src="../../../assets/icons/delete.png" alt="delete" /></span>  -->
+<!--              
                <div *ngIf="user.id" class="post__add-comment comment"  [style.visibility]="!isHidden ? 'visible' : 'hidden'">
                      <textarea placeholder="Add comment" class="comment__input" [(ngModel)]="newComment" style="color:rgba(106, 104, 104, 0.8); font-size: 14px" (click)="$event.stopPropagation()"></textarea>
                     <div class="comment__buttons">
@@ -41,11 +46,7 @@
                          <button type="button" class="comment__button" (click)="onCommentClick($event)">Comment</button>
                     </div>
               
-               </div>  
+               </div>   -->
           </div>
      </div>
 </div>
-
-<ng-template #noReadMore>
-     <p class="post__read-more"></p>
-</ng-template>

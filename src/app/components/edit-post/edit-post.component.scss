@@ -22,12 +22,10 @@
         img {
             width: 100px;
             height: 100px;
+            object-fit: cover;
         }
     }
-  &__buttons {
-    // height: 70px;
-    // width: 400px;
-  }
+
     &__images-wrapper {
         display: flex;
         justify-content: center;

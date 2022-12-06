@@ -48,7 +48,6 @@ export class NavbarComponent implements OnInit {
     )
     .subscribe(val => {
       if(val) {    
-        console.log('val ------->>>>>', val)
         const userData = JSON.parse(val);        
         this.user = userData?.user;
         this.isAuth = userData?.isAuth;

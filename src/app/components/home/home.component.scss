@@ -21,7 +21,7 @@
 
 .slide-overlay {
   position: absolute;
-  min-height: 90vh;
+  min-height: 74.99vh;
   width: 100%;
   top: 0;
   left: 0;
@@ -32,7 +32,7 @@
   position: relative;
   width: 100%;
 
-  min-height: 89vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,8 @@
 .img-slider .slide {
   z-index: 1;
   position: absolute;
-  width: 100%;
+  display: block;
+  // width: 100%;
   clip-path: circle(0% at 0 50%);
 }
 
@@ -54,9 +55,9 @@
 
 .img-slider .slide img {
   z-index: 1;
-  width: 100%;
+  width: 82.4vw;
   border-radius: 5px;
-  height: 90vh;
+  height: 75vh;
   object-fit: cover;
 }
 
@@ -76,9 +77,10 @@
 }
 .img-slider .slide .info .slider__text {
 color: #fff;
-background-color: rgba(0,0,0,0.2);
+background-color: rgba(0,0,0,0.4);
 font-size: 48px;
-min-width: 90%;
+// min-width: 90%;
+width: 100%;
 padding: 20px;
 border-radius: 4px;
 text-align: center;
@@ -202,27 +204,27 @@ font-weight: 700;
 }
 &__item-content {
   font-size: 60px;
-  // background: #eee !important;
-  padding: 8px 24px;
+  padding: 8px 0px;
   border-radius: 16px;
+  width: 100%;
   z-index: 10;
 }
 &__item:nth-child(1) {
   height: 89vh;
-  background-image: url('../../../assets/images/banner/2.jpg');
+  background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/dealsbg.jpg');
   background-size:cover;
   background-attachment: fixed;
 }
 &__item:nth-child(2) {
- background: #fff;
+  background: #fff;
 }
 &__item:nth-child(3) {
   height: 500px;
-  background-image: url('../../../assets/images/banner/tips.jpg');
+  background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/adbg.jpg');
   background-size: cover;
   background-attachment: fixed;
   position: relative;
- }
+}
  &__item:nth-child(3)::before {
   position: absolute;
   content: '';
@@ -239,10 +241,10 @@ font-weight: 700;
   background-color: #fbfbfb;
   padding: 85px 0 80px;
   height: 112vh;
- }
- &__item:nth-child(5) {
+}
+&__item:nth-child(5) {
   height: 400px;
-  background-image: url('../../../assets/images/banner/spain.jpg');
+  background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/countdownbg.jpg');
   background-size: cover;
   background-attachment: fixed;
  }
@@ -536,26 +538,26 @@ font-weight: 700;
 }
 
 .featuredPropBox ul li:nth-child(1) {
-  background-image: url('../../../assets/images/events/venezia.webp');
+  background-image: url('https://media.cntraveller.com/photos/61dd70f45bbe31166e5ed94f/master/w_1920%2Cc_limit/Carnevale%2520di%2520Venezia%2C%2520Venice-C1A2C9.jpeg');
 }
 
 .featuredPropBox ul li:nth-child(2) {
-  background-image: url('../../../assets/images/events/butterfly.webp');
+  background-image: url('https://media.cntraveller.com/photos/61dd710b5bbe31166e5ed955/master/w_1920%2Cc_limit/Monarch%2520butterfly%2520migration%2C%2520Mexico%2520-GettyImages-492967380.jpeg');
 }
 
 .featuredPropBox ul li:nth-child(3) {
-  background-image: url('../../../assets/images/events/venezia.webp');
+  background-image: url('https://media.cntraveller.com/photos/61dd710acfbeb42453b734da/master/w_1920%2Cc_limit/Cherry%2520blossom%2C%2520Mount%2520Yoshino-GettyImages-508725103.jpeg');
 }
 
 .featuredPropBox ul li:nth-child(4) {
-  background-image: url('../../../assets/images/events/event-turkey.webp');
+  background-image: url('https://media.cntraveller.com/photos/61dd71174faf89ae191a2522/master/w_1920%2Cc_limit/Temecula%2520Valley%2520Balloon%2520and%2520Wine%2520Festival%2C-BMJDH0.jpeg');
 }
 
 .featuredPropBox ul li:nth-child(5) {
-  background-image: url('../../../assets/images/events/switzerland.webp');
+  background-image: url('https://media.cntraveller.com/photos/61dd7110cfbeb42453b734dd/master/w_1920%2Cc_limit/Montreux%2520Jazz%2520Festival%2C%2520Switzerland%2520-2DEY79X.jpeg');
 }
 .featuredPropBox ul li:nth-child(6) {
-  background-image: url('../../../assets/images/events/wales-air.webp');
+  background-image: url('https://media.cntraveller.com/photos/61dd70fa4faf89ae191a251c/master/w_1920%2Cc_limit/Dieppe%2520International%2520Kite%2520Festival%2C%2520France%25200-2BY58WY.jpeg');
 }
 
 
@@ -615,7 +617,8 @@ font-weight: 700;
 /* Slideshow container */
 .slideshow-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
+  display: block;
   height: 30vh;
   background: fff;
   z-index: 10;
@@ -664,7 +667,8 @@ font-weight: 700;
 /* The dot/bullet/indicator container */
 .dot-container {
     text-align: center;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 0px;
     background: #ddd;
 }
 
@@ -699,15 +703,15 @@ q {font-style: italic;}
   color: #2195c3;
 }
 .quotes1 {
-  background-image: url('../../../assets/images/userPhotos/user1.jpg');
+  background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/testemonial1.jpg');
   background-size: cover;
 }
 .quotes2 {
-  background-image: url('../../../assets/images/userPhotos/user3.jpeg');
+  background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/testemonial3.jpg');
   background-size: cover;
 }
 .quotes3 {
-  background-image: url('../../../assets/images/userPhotos/user2.jpg');
+  background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/testemonial2.jpg');
   background-size: cover;
 }
  
@@ -787,3 +791,4 @@ q {font-style: italic;}
     color: #fff;
   }
 }
+////////////////////////////////////////////////////////@at-root

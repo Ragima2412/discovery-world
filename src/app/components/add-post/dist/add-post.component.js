@@ -46,7 +46,6 @@ var AddPostComponent = /** @class */ (function () {
                 photoUrl: formValue.photoUrl,
                 tags: formValue.tags
             };
-            console.log('create------------', formValue, newPost);
             _this.postDataService.addPost(newPost);
             _this.router.navigate(['/posts']);
         });

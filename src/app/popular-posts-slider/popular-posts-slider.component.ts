@@ -29,7 +29,7 @@ export class PopularPostsSliderComponent implements OnInit {
   }  
   setSwiperInstance(swiper: Swiper) {
     setInterval(() => {
-      swiper.slideNext();
+      swiper?.slideNext();
     }, 4000);
   }
 }

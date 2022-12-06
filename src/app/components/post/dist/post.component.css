@@ -1,0 +1,306 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 526px;
+  height: 600px;
+  background-color: red;
+  display: flex;
+  place-items: center;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background: white;
+  color: #1d3745;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: 1px solid #e4e1e1;
+  box-shadow: 0 2.5rem 2rem -2rem rgba(93, 94, 95, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+.post:hover {
+  transform: scale(1.02);
+}
+.post__date {
+  background: #2195c3;
+  display: inline-block !important;
+  padding: 8px 15px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  width: 210px;
+}
+.post__content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.post__tags {
+  display: flex;
+  width: 100%;
+}
+.post__tag {
+  font-size: 14px;
+  color: rgba(106, 104, 104, 0.54);
+}
+.post__image-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 350px;
+  position: relative;
+}
+.post__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+.post__image {
+  object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+}
+.post__title {
+  text-align: start;
+  word-break: break-all;
+  color: #2c2f32;
+  font-size: 21px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.post__description {
+  height: 90px;
+  width: 100%;
+  font-size: 15px;
+  color: #555;
+  text-align: start;
+  overflow: hidden;
+  border-bottom: 1px dashed #ccc;
+  padding: 10px 0 15px;
+}
+.post__read-more {
+  font-size: 12px;
+  text-align: end;
+  height: 15px;
+  width: 100%;
+  cursor: pointer;
+  color: rgba(45, 141, 131, 0.7);
+  transition: hover 0.4s ease-out;
+  margin-bottom: 10px;
+}
+.post__read-more:hover {
+  text-decoration: underline;
+}
+.post__image {
+  display: flex;
+  width: 100%;
+  height: 200px;
+}
+.post__icons {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  font-size: 14px;
+  color: rgba(106, 104, 104, 0.54);
+  gap: 10px;
+}
+.post__user-liked {
+  visibility: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #ece7e7;
+  left: -20px;
+}
+.post__user-liked-icon {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: -10px;
+}
+.post__user-liked-icon:first-child {
+  margin-left: 5px;
+}
+.post__icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.post__icon:hover ~ .post__user-liked {
+  visibility: visible;
+}
+
+.comment {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background: white;
+  color: #1d3745;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: 300;
+  width: 25vmin;
+  height: 12vmin;
+  border-radius: 2ch;
+  border: 1px solid #e4e1e1;
+  box-shadow: 2rem 2.5rem 2rem -2rem rgba(26, 60, 77, 0.4);
+  transition: all 0.3s ease-in-out;
+  top: 30px;
+  padding: 10px;
+  left: -10px;
+}
+.comment__buttons {
+  display: flex;
+  padding-left: 60px;
+}
+.comment__button {
+  all: unset;
+  border: none;
+  color: white;
+  font-size: 10px;
+  padding: 2px;
+  border-radius: 10px;
+  border: 2px solid rgba(45, 141, 131, 0.7);
+  width: 50px;
+  margin-left: 10px;
+  background-color: rgba(45, 141, 131, 0.7);
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.comment__button:hover {
+  background-color: rgba(12, 96, 88, 0.7);
+}
+.comment textarea::-webkit-input-placeholder {
+  color: rgba(106, 104, 104, 0.8);
+  font-family: "Roboto", sans-serif;
+}
+.comment textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(106, 104, 104, 0.8);
+  font-family: "Roboto", sans-serif;
+}
+.comment textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(106, 104, 104, 0.8);
+  font-family: "Roboto", sans-serif;
+}
+.comment textarea:-ms-input-placeholder {
+  color: rgba(106, 104, 104, 0.8);
+  font-family: "Roboto", sans-serif;
+}
+.comment textarea::placeholder {
+  color: rgba(106, 104, 104, 0.8);
+  font-family: "Roboto", sans-serif;
+}
+.comment__input {
+  min-height: 20px;
+  resize: none;
+  border: none;
+  width: 22.5vmin;
+  border-bottom: 1px solid rgba(106, 104, 104, 0.54);
+  outline: none;
+  padding: 0;
+  margin-top: 20px;
+  padding: 0 10px;
+  scrollbar-color: rgba(16, 41, 70, 0.3) transparent;
+  scrollbar-width: thin;
+}
+.comment__input::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.comment__input::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+  height: 6px;
+}
+.comment__input::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 41, 70, 0.3);
+  border-radius: 6px;
+}
+.comment__input [placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #555;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #e45959;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

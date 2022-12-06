@@ -67,8 +67,7 @@ export class PostsComponent implements PagingConfig, OnInit {
       .pipe(
         takeUntil(this.destroy$)
       )
-      .subscribe((posts: Post[]) => {      
-        console.log('posts all', posts)
+      .subscribe((posts: Post[]) => {  
         this.posts = _.cloneDeep(posts);
         this.isNoItems = this.posts.length > 0 ? false : true;
         this.pagingConfig.totalItems = posts.length;    

@@ -81,7 +81,6 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('post', this.post)
     this.userDataService.users$.subscribe(val => {
       this.users = val
     }, (err) => {
@@ -169,7 +168,6 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
       if(!this.post.videoId) {    
         this.videoDataService.getVideoId(obj.cityName).subscribe(data => {
           let result = data.items[0].id.videoId; 
-          console.log(result)
           this.postsDataService.addVideoId(this.post, result);
         //  this.storageService.setItem('post', JSON.stringify({videoId: result,...this.post}))
         })

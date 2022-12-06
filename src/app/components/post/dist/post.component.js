@@ -37,7 +37,6 @@ var PostComponent = /** @class */ (function () {
         this.isLiked = this.likes.find(function (item) { return item.userId === _this.user.id; }) === -1 ? false : true;
     }
     PostComponent.prototype.ngOnInit = function () {
-        console.log('user----', this.user);
         this.likes = Object.values(this.post.likes);
         this.tags = this.post.tags.split(',').map(function (tag) { return "#" + tag; });
     };

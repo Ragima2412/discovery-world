@@ -1,7 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { inMemoryPersistence } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 import SwiperCore, { Keyboard, Pagination, Navigation, Virtual, Swiper } from 'swiper';
+import { Post } from '../components/models/post';
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
@@ -13,14 +16,15 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
   encapsulation: ViewEncapsulation.None,
 })
 export class SwiperSliderComponent implements OnInit {
-  public posts = [
-    {}, 'post2', 'post3'
-  ]
+@Input()
+posts: Post[];
 
   
   slides$ = new BehaviorSubject<string[]>(['']);
 
-  constructor() {}
+  constructor(
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.slides$.next(
@@ -32,5 +36,9 @@ export class SwiperSliderComponent implements OnInit {
     setInterval(() => {
       swiper?.slideNext();
     }, 4000);
+  }
+
+  onClick(post: Post) {
+    this.router.navigate([`posts/view/${post.id}`])
   }
 }

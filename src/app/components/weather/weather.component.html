@@ -1,26 +1,38 @@
 <div class="app__weather-wrapper">
     <div class="app__weather weather">
+        <p class="weather__title">Weather forecast for 3 days</p>
         <div class="weather__row">
             <div class="weather__location">
                 <p class="weather__city">{{location?.name}}</p>
                 <p class="weather__country">{{location?.country}}</p>
             </div>
             <div class="weather__location-details">
-                <p><b>lat:</b> {{location.lat}}</p>
-                <p><b>long:</b> {{location.lon}}</p>
+                <p><b>Latitude:</b> {{location?.lat}}</p>
+                <p><b>Longitude:</b> {{location?.lon}}</p>
             </div>
         </div>
         <div class="weather__current">
             <div class="weather__current-image">
-                <img  src="../../../assets/icons/weather/1.png" alt="weather-icon" />
+                <img  src="../../../assets/icons//weather/sunny1.png" alt="weather-icon" />
+                <p>Today</p>
             </div>
-           <p class="weather__current-temperature">{{currentWeather.temp_c > 0 ? '+' : null}}{{currentWeather.temp_c + celcMark}}</p>
+           <p class="weather__current-temperature">{{currentWeather?.temp_c > 0 ? '+' : null}}{{currentWeather?.temp_c + celcMark}}</p>
+           <div class="weather__add-info">
+            <p class="weather__add-info-item">Humidity: {{currentWeather?.humidity}} %</p>
+            <p class="weather__add-info-item">Feels like: {{currentWeather?.feelslike_c + celcMark}}</p>
+            <p class="weather__add-info-item">Wind: {{currentWeather?.wind_kph}} km/h</p>
+           </div>
         </div>
           <div class="weather__days" >
             <div class="weather__day" *ngFor="let day of weatherData">
-                <p class="weather__weekday">{{day.weekday}}</p>
+                <p class="weather__weekday">{{day.date}}</p>
                 <p> {{day.day.maxtemp_c > 0 ? '+' : null}}{{day.day.maxtemp_c + celcMark}}</p>
-                </div>
+                <div class="weather__add-info">
+                    <p class="weather__add-info-item">Humidity: {{day.hour[0]?.humidity}} %</p>
+                    <p class="weather__add-info-item">Feels like: {{day.hour[0]?.feelslike_c + celcMark}}</p>
+                    <p class="weather__add-info-item">Wind: {{day.hour[0]?.wind_kph}} km/h</p>
+                   </div>
+             </div>
         </div>      
     </div>
 </div>

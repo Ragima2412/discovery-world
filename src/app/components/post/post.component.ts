@@ -26,6 +26,7 @@ export class PostComponent implements OnInit {
   public allUsers: any;
   public usersIconList: any;
   public dateOfCreate: string;
+  public userName: any;
 
 @Input()
 public post: Post;
@@ -68,12 +69,17 @@ public user: User;
       wrapper.firstChild.classList.toggle('show');
     }
   }
+
+  getCreaterName(data:any) {
+   let result = JSON.parse(data).find((user: any) => user.id === this.post.userId );
+   this.userName = `${result?.firstname} ${result?.lastname}`;
+  }
   getAllUsers() {
     this.storageService.getItem('allUsers')   
     .subscribe(val => {
       this.allUsers = val;
+      this.getCreaterName(val)
       this.getUserIconsList();
-
     })
   }
   getUserIconsList() {

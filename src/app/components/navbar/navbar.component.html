@@ -7,11 +7,11 @@
       <div class="navbar__links" *ngIf="!isAuth; else logout">
         <a class="navbar__link" routerLink="/home" routerLinkActive="navbar__active-link" >Home</a>
         <a class="navbar__link" routerLink="/posts" routerLinkActive="navbar__active-link">Posts</a>
+        <a class="navbar__link" routerLink="/gallery" routerLinkActive="navbar__active-link">Gallery</a>
         <a class="navbar__link" routerLink="/login" routerLinkActive="navbar__active-link">Login</a>
         <a class="navbar__link" routerLink="/register" routerLinkActive="navbar__active-link">Sign Up</a>
       </div>   
       <div class="navbar__user" *ngIf="isAuth; else noAuth"> 
-        <!-- <p class="navbar__user-name">{{user.firstname + " " + user.lastname}}</p>      -->
         <span class="navbar__user-icon" *ngIf="user.photoUrl" [style.background-image]="'url(' +  user.photoUrl  + ')'"></span> 
         <span class="navbar__user-icon" *ngIf="user.photo" [style.background-image]="'url(' +  user.photo  + ')'"></span> 
       </div>
@@ -21,6 +21,7 @@
 <ng-template #logout>
   <a class="navbar__link" routerLink="/home" routerLinkActive="navbar__active-link" >Home</a>
   <a class="navbar__link" routerLink="/posts" routerLinkActive="navbar__active-link">Posts</a>
+  <a class="navbar__link" routerLink="/gallery" routerLinkActive="navbar__active-link">Gallery</a>
   <a class="navbar__link" routerLink="/posts" (click)="onLogout()">Logout</a>
 </ng-template>
 

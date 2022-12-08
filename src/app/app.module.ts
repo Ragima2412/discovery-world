@@ -42,6 +42,7 @@ import { VideoComponent } from './components/video/video.component';
 import { SwiperModule } from 'swiper/angular';
 import { SwiperSliderComponent } from './swiper-slider/swiper-slider.component';
 import { PopularPostsSliderComponent } from './popular-posts-slider/popular-posts-slider.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { PopularPostsSliderComponent } from './popular-posts-slider/popular-post
     VideoComponent,
     SwiperSliderComponent,
     PopularPostsSliderComponent,
+    GalleryComponent,
   ],
   imports: [
     NgxYoutubePlayerModule.forRoot(),

@@ -32,7 +32,7 @@
   position: relative;
   width: 100%;
 
-  min-height: 90vh;
+  min-height: 89.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,7 +255,7 @@ font-weight: 700;
 
 .popular-posts {
  padding: 150px 0px 105px;
-  height:90vh;
+  height:95vh;
   margin-top: -15px;
   background-color: #fbfbfb;
 
@@ -285,7 +285,7 @@ font-weight: 700;
     background: #333;
     content: '';
     right: -100px;
-    top: 50%;
+    top: 50%; 
 }
   &__text {
     color: #555;
@@ -688,7 +688,7 @@ font-weight: 700;
 
 /* Add a background color to the active dot/circle */
 .active, .dot:hover {
-  background-color: #717171;
+  // background-color: #717171;
   border: 3px solid white;
   transform: scale(1.2);
 
@@ -791,4 +791,3 @@ q {font-style: italic;}
     color: #fff;
   }
 }
-////////////////////////////////////////////////////////@at-root

@@ -1,20 +1,23 @@
-
-<swiper
-[slidesPerView]="3"
-[navigation]="true"
-[keyboard]="{
+<swiper [slidesPerView]="3" [navigation]="true" [keyboard]="{
   enabled: true
-}"
-[virtual]="true"
-class="my-swiper"
-(swiper)="setSwiperInstance($event)"
-[slidesPerView]="3" [spaceBetween]="50" [navigation]="{}"
- [scrollbar]="{ draggable: true }" [watchSlidesProgress]="true"
+}" [virtual]="true" class="swiper" (swiper)="setSwiperInstance($event)" [slidesPerView]="3" [spaceBetween]="0"
+  [navigation]="{}" [scrollbar]="{ draggable: true }" [watchSlidesProgress]="true">
+  <ng-template swiperSlide *ngFor="let post of posts">
+    <div class="popular-post" (click)="onClick(post)">
+      <div class="popular-post__sliderbox">
+        <div class="popular-post__slidercard">
+          <div class="popular-post__sliderimgBx">
+              <img src="{{'data:image/jpg;base64,' + post.photo}}" alt="photo" alt="images">
+          </div>
+          <div class="popular-post__sliderdetails">
+              <h2>{{post.cityName}}<br><span>{{post.dateOfCreate.split(' ').slice(1).join(' ')}}</span></h2>
+          </div>
+        </div>   
+        
+   
+    </div>
 
->
-<ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
-  <div class="swiper-slide-container">
-    {{ slide }}
-  </div>
-</ng-template>
+    </div>
+      
+  </ng-template>
 </swiper>

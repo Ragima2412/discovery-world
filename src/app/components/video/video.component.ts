@@ -9,8 +9,8 @@ import { VideoDataService } from 'src/app/services/video-data/video-data.service
  <div class="app__video-wrapper">
   <div class="app__video">
     <youtube-player
-      [width]="800"
-      [height]="700"
+      [width]="1600"
+      [height]="800"
       [videoId]="id"
       (ready)="savePlayer($event)"
       (change)="onStateChange($event)"
@@ -20,7 +20,7 @@ import { VideoDataService } from 'src/app/services/video-data/video-data.service
   `,
     styleUrls: ['./video.component.scss']
 })
-export class VideoComponent implements OnInit {
+export class VideoComponent implements OnInit {    
 
     player: YT.Player;
     public id: string;

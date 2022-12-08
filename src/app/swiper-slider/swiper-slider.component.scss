@@ -3,18 +3,111 @@
 @import 'swiper/scss/pagination';
 
 .my-swiper {
-    height: 80%;
-    width: 70%;
+    height: 90%;
+    width: 100%;
 }
 
-.swiper-slide-container {
+.slider-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: start !important;
+  flex-direction: column;
+  align-items: center !important;
   background: #fff;
-  height: 100%;
-  max-width: 600px;
+  width: 410px;
+  height: 625px;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 0 !important;
+  border: 1px solid rgb(228, 225, 225);
+  box-shadow: 0 2.5rem 2rem -2rem rgba(93, 94, 95, 0.4);
+  cursor: pointer;
+
+  &__image-wrapper {
+    height: 290px;
+    width: 100%;  
+    overflow: hidden;
+    transform: rotate(0.0001deg);
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    img {
+      transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    &:hover {
+      img{
+      transform: scale(1.15)}
+    }  
+  }
+
+  &__image {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__user-info {
+    width: 100%;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+    background: linear-gradient(45deg,#d60d45 0%,#046b8c 100%);
+    margin-bottom: 18px;
+  }
+
+  &__content {
+  width: 100% !important;
+  }
+  &__title-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 0 20px;
+  }
+  &__title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #444;
+    margin-top: 0;
+    line-height: 1.5;
+    font-size: 19px;
+  }
+
+  &__date {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    color: #005294;
+    margin: 3px 0 0;
+  }
+
+  &__description {
+    color: #555;
+    font-size: 15px;
+    height: 80px;
+    padding: 0 20px;
+    text-align: start;
+  }
+
+  &__button {
+    border: none;
+    padding: 7px 25px;
+    display: inline-block;
+    color: #fff;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+    background: #d60d45;
+    border: 1px solid #d60d45;
+    font-size: 15px;
+    font-weight: 600;
+    &:hover {            
+      background-color: #fff;
+      color: #d60d45;
+      border-color:  #d60d45;
+  }
+  }
+  &__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -30,19 +30,19 @@ export class StorageService {
     return behaviorSubject;
   }
 
-//   public getItem(identifier: string): BehaviorSubject<any> {
-// 		const behaviorSubject = this.getBehaviorSubject(identifier);
-// 		const item = localStorage.getItem(identifier);
-// 		behaviorSubject.next(item);
-// 		return behaviorSubject;
-// 	}
-
-	public getItem(identifier: string): BehaviorSubject<any> {
+  public getItem(identifier: string): BehaviorSubject<any> {
 		const behaviorSubject = this.getBehaviorSubject(identifier);
-		const item = localStorage.getItem('userData');
+		const item = localStorage.getItem(identifier);
 		behaviorSubject.next(item);
 		return behaviorSubject;
-	}	
+	}
+
+	// public getItem(identifier: string): BehaviorSubject<any> {           //its necessarilly
+	// 	const behaviorSubject = this.getBehaviorSubject(identifier);
+	// 	const item = localStorage.getItem('userData');
+	// 	behaviorSubject.next(item);
+	// 	return behaviorSubject;
+	// }	
 
   public setItem(identifier: string, object: string): void {
 		localStorage.setItem(identifier, object);

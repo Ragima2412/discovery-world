@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { RegisterComponent } from './components/register/register.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'weather', component: WeatherComponent},
   {path: 'map', component: MapComponent},
   {path: 'video', component: VideoComponent},
+  {path: 'gallery', component: GalleryComponent},
   {path: '**', component: PageNotFoundComponent}, 
 ];
 

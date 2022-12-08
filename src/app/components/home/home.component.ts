@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
+import { PostsDataService } from 'src/app/services/posts-data/posts-data.service';
+import { Post } from '../models/post';
+const _ = require("lodash");
 
 @Component({
   selector: 'app-home',
@@ -8,13 +12,47 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-
-  constructor() {}
+  private destroy$: Subject<void> = new Subject<void>();
+  public posts:Post[];
+  public popularPosts: Post[];
+  constructor(
+    private postDataService: PostsDataService,
+    private changeDetectorRef: ChangeDetectorRef,
+  ) {}
   
   ngOnInit(): void {
+    this.getPosts();
     this.onBannerSliderMode();
     this.parallaxEffect();
     this.quotesSlideShow();
+  }
+
+  getPosts() {      
+    this.postDataService.posts$
+      .pipe(
+        takeUntil(this.destroy$)
+      )
+      .subscribe((posts: Post[]) => {  
+        this.getPopularPosts(posts);
+        let postsList: Post[] = Array.from({ length: 10 });
+        this.posts = postsList.map((el: any )=> {
+          el = [...posts];
+          return el
+        }).flatMap(el => el);
+        this.changeDetectorRef.markForCheck();
+      }, (error) => {
+        console.log('err', error)
+      })
+  }
+
+  getPopularPosts(posts: Post[]) {
+    let postsList: Post[] = Array.from({ length: 10 });
+   let sortedList =posts.sort((a: any, b: any) => Object.keys(b.likes).length - Object.keys(a.likes).length);
+   sortedList.length = sortedList.length > 5 ? 5 : sortedList.length;
+   this.popularPosts = postsList.map((el: any )=> {
+    el = [...posts];
+    return el
+  }).flatMap(el => el);
   }
 
   onBannerSliderMode() {

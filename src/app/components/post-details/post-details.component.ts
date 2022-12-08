@@ -113,7 +113,8 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     /////////////////////////////////////////////////////////////// вынести в отдельную функцию
     this.storageService.getItem('post').subscribe(val => {
       let obj = JSON.parse(val);
-      this.getCityDataService.getData(obj.cityName).subscribe(val => {
+      this.getCityDataService.getData(obj.cityName).subscribe(val => {  
+        console.log(val)      
         this.storageService.setItem('cityData',JSON.stringify(val) )
       }); 
     }) 

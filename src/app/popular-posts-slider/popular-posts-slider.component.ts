@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 import SwiperCore, { Keyboard, Pagination, Navigation, Virtual, Swiper } from 'swiper';
+import { Post } from '../components/models/post';
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
@@ -13,16 +15,17 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 })
 export class PopularPostsSliderComponent implements OnInit {
 
-  public posts = [
-    {}, 'post2', 'post3'
-  ]
+@Input()
+posts: Post[];
 
   
   slides$ = new BehaviorSubject<string[]>(['']);
 
-  constructor() {}
+  constructor(
+    private router: Router,
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.slides$.next(
       Array.from({ length: 50 }).map((el, index) => `Slide ${index + 1}`)
     );
@@ -31,5 +34,9 @@ export class PopularPostsSliderComponent implements OnInit {
     setInterval(() => {
       swiper?.slideNext();
     }, 4000);
+  }
+
+  onClick(post: Post) {
+    this.router.navigate([`posts/view/${post.id}`])
   }
 }

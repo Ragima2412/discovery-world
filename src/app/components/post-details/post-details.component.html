@@ -25,8 +25,8 @@
                 <p>{{postCreatedUser?.firstname + " " +  postCreatedUser?.lastname}}</p>
             </span>
             <div class="detailed-post__icons" >         
-                <span class="detailed-post__edit" *ngIf="user.id" (click)="onEdit($event, post)">Edit Post</span>        
-                <span class="detailed-post__delete" *ngIf="user.id" (click)="onDelete($event,post)">Delete Post</span> 
+                <span class="detailed-post__edit" *ngIf="user.id === post.userId" (click)="onEdit($event, post)">Edit Post</span>        
+                <span class="detailed-post__delete" *ngIf="user.id === post.userId" (click)="onDelete($event,post)">Delete Post</span> 
            </div>
         
             <div class="detailed-post__comments">

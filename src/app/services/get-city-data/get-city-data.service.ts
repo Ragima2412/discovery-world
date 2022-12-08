@@ -14,7 +14,7 @@ export class GetCityDataService {
 
   public getData(city: string): Observable<any> {
     return this.httpClient
-      .get<any>(`https://api.weatherapi.com/v1/forecast.json?key=556ea96c9cca4e36b2a162635221911&q=${city}&days=7&aqi=no&alerts=no`)
+      .get<any>(`https://api.weatherapi.com/v1/forecast.json?key=6d259c3d72e148aaae4164513220812&q=${city}&days=7&aqi=no&alerts=no`)
       .pipe(catchError(handleErrorMessage))
   }
 }

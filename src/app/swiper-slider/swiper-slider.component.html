@@ -2,20 +2,32 @@
 <swiper
 [slidesPerView]="3"
 [navigation]="true"
-[pagination]="{ type: 'fraction' }"
 [keyboard]="{
   enabled: true
 }"
 [virtual]="true"
 class="my-swiper"
 (swiper)="setSwiperInstance($event)"
-[slidesPerView]="3" [spaceBetween]="50" [navigation]="{}"
+[slidesPerView]="3" [spaceBetween]="0" [navigation]="{}"
  [scrollbar]="{ draggable: true }" [watchSlidesProgress]="true"
 
 >
-<ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
-  <div class="swiper-slide-container">
-    {{ slide }}
+<!-- <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i"> -->
+<ng-template swiperSlide *ngFor="let post of posts">
+
+  <div class="swiper-slide-container slider-item" (click)="onClick(post)">
+  <div class="slider-item__image-wrapper" >
+    <img class="slider-item__image" src="{{'data:image/jpg;base64,' + post.photo}}" alt="photo" />
+  </div> 
+  <div class="slider-item__user-info"></div>
+  <div class="slider-item__content">
+    <div class="slider-item__title-wrapper">
+      <p class="slider-item__title">{{post.cityName}}</p>
+      <p class="slider-item__date">{{post.dateOfCreate}}</p>
+    </div>
+    <p class="slider-item__description">{{post.description.slice(0,150)}}...</p>
+    <button class="slider-item__button" (click)="onClick(post)">View more details</button> 
+  </div>
   </div>
 </ng-template>
 </swiper>

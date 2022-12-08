@@ -17,17 +17,14 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    console.log(this.weatherData, this.location,this.currentWeather)
   }
 
 getData() {
   let weekDays = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
- this.storageService.getItem('cityData').subscribe(val => {
+ this.storageService.getItem('cityData').subscribe(val => { 
   let data = JSON.parse(val);
-  let days = weekDays.map((item, index) => {
-    data.forecast.forecastday[index].weekday = item;
-  return data.forecast.forecastday[index]})
-  this.weatherData = days;
-
+  this.weatherData = data.forecast.forecastday;
   this.currentWeather = data.current;
   this.location = data.location;
  })

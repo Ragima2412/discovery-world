@@ -34,11 +34,15 @@
     display: block;
     line-height: 1.6rem;
     margin-bottom: 20px;
+    text-transform: uppercase;
   }
-  &__country {}
+  &__country {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
 
  &__title {
-  position: relative;
+    position: relative;
     margin-bottom: 10px;
     text-transform: uppercase;
     font-size: 28px;
@@ -49,8 +53,8 @@
     line-height: 1.5;
     margin-bottom: 10px;
     margin: 0 auto;
- }
-
+  }
+  
   &__row {
     display: flex;
     justify-content: space-between;
@@ -59,8 +63,9 @@
     margin-top: 50px;
     padding: 0 50px;
   }
-
+  
   &__location-details {
+    text-transform: uppercase;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -71,12 +76,21 @@
     }
   }
 
-
-  &__add-info {
+  
+  &__add-info,
+  &__current-add-info {
     display: flex;
     gap: 50px;
-    margin-left: 110px;
+    margin-left: 90px;
     align-self: center;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 20px;
+    
+  }
+  &__current-add-info {
+    margin-left: 105px;
+    font-size: 20px;
   }
   &__current-image {  
     width: 180px;
@@ -95,26 +109,31 @@
     display: flex;
     justify-content: start;
     align-items: start;
-    padding: 0 0 10px 30px;
+    padding: 0 0 50px 30px;
   }
   &__current-temperature {
-    margin-right: 65px;
+    margin-left: 20px;
     font-size: 45px;  
-    align-self: center;  
+    align-self: center; 
+    width: 200px; 
   }
   &__current-image{
     margin-right: 60px;
     height: 80%;
   }
 
-  &__weekday{
+  &__weekday,
+  &__temp{
     margin-right: 40px;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 500;
-  }
+    color: #555;
+    text-transform: uppercase;
+    width: 120px;
+    }
 
   &__day {
-    padding: 17px 60px;
+    padding: 27px 60px;
     border-top: 1px solid rgb(196, 192, 192);
     display: flex;
     width: 100%;

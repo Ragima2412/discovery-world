@@ -113,5 +113,12 @@
 }
 
 @media (max-width: 570px) {
-  
+  .slider-item {
+    width: 100%;
+    height: 625px;
+    &__button {
+      margin-top: 40px;
+    }
+  }
+
 }

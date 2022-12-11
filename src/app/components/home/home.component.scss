@@ -320,7 +320,6 @@
     margin-top: 0;
     line-height: 1.5;
     margin-bottom: 10px;
-
   }
 
 }
@@ -824,104 +823,119 @@ q {
     color: #fff;
   }
 }
+
 @media (max-width: 1850px) {
   .travel-tips {
     display: none;
   }
-  .events__title{
-    // z-index: 0;
-    // padding-top: 150px;
-  } 
-  .events__invisible{
+
+  .events__invisible {
     padding-top: 150px;
   }
+
   .gallery__invisible,
   .events__invisible,
   .footer__copyright {
     visibility: hidden;
     display: none !important;
   }
+
   .gallery {
     padding: 40px;
   }
-
- }
+}
 
 @media (max-width: 1300px) {
- .popular-posts {
-  min-height: 100vh;
-  padding-top: 100px;
- }
- .parallax__item-content {
-  z-index: 2;
- }
-}
-@media(max-width: 1025px) {
-  .events__title  {
+  .popular-posts {
+    min-height: 100vh;
+    padding-top: 100px;
   }
+
+  .parallax__item-content {
+    z-index: 2;
+  }
+}
+
+@media(max-width: 1025px) {
+
   .parallax__item {
     padding-top: 40px;
   }
 }
 
 @media (max-width: 688px) {
+  .posts__slider {
+    width: 100vw;
+  }
+  .parallax__item:nth-child(5),
+  .parallax__item:nth-child(3) {
+    display: none;
+  }
 
-.parallax__item:nth-child(5),
-.parallax__item:nth-child(3) {
-  display: none;
-}
   .footer {
     height: 45vh;
     padding-top: 50px;
     margin-top: 50px;
+
     &_form {
       background-color: green;
     }
   }
+
   .post__title_invisible {
     display: none;
   }
+
   .form__control {
     width: 60%;
   }
+
   .gallery__content {
-      width: 100%;
+    width: 100%;
   }
+
   .mySlides {
     width: 80%;
     padding: 5px;
   }
+
   .gallery__content a img {
     width: 100%;
   }
+
   .dot-container {
     margin-top: 190px;
   }
+
   .img-slider {
-    display: none;    
+    display: none;
   }
-   .home {
-     &__static-banner {
-       display: block;
-       display: flex;
-       position: relative;
-        img {
-         height: 90vh;
-         width: 100%;
-         object-fit: cover;
-        }       
+
+  .home {
+    &__static-banner {
+      display: block;
+      display: flex;
+      position: relative;
+
+      img {
+        height: 90vh;
+        width: 100%;
+        object-fit: cover;
       }
-      &__static-banner-text {
-        position: absolute;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%, -50%);
-       padding: 15px 30px;
-       background-color: rgba(0, 0, 0, 0.4);
-       color: #fff;
-      } 
-    }    
-    .slider__text {
+    }
+
+    &__static-banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+    }
+  }
+
+  .slider__text {
     font-size: 40px;
     width: 100%;
     padding: 20px;

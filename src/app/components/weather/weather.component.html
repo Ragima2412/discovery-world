@@ -17,10 +17,10 @@
                 <p>Today</p>
             </div>
            <p class="weather__current-temperature">{{currentWeather?.temp_c > 0 ? '+' : null}}{{currentWeather?.temp_c + celcMark}}</p>
-           <div class="weather__current-add-info">
-            <p class="weather__current-add-info-item">Humidity: {{currentWeather?.humidity}} %</p>
-            <p class="weather__current-add-info-item">Feels like: {{currentWeather?.feelslike_c + celcMark}}</p>
-            <p class="weather__current-add-info-item">Wind: {{currentWeather?.wind_kph}} km/h</p>
+           <div class="weather__add-info">
+            <p class="weather__add-info-item">Humidity: {{currentWeather?.humidity}} %</p>
+            <p class="weather__add-info-item">Feels like: {{currentWeather?.feelslike_c + celcMark}}</p>
+            <p class="weather__add-info-item">Wind: {{currentWeather?.wind_kph}} km/h</p>
            </div>
         </div>
           <div class="weather__days" >

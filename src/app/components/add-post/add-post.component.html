@@ -1,7 +1,7 @@
 <div class="app__form-wrapper">
   <form [formGroup]="createPostForm" class="app__register form" (ngSubmit)="onSubmit()" novalidate>
       <p class="form__title">Create Post</p>  
-      <div>
+      <div class="form__input-wrapper">
         <input class="form__form-control" type="text" id="cityName" name="cityName" formControlName="cityName"
           placeholder="City Name">
         <div class="form__alert"
@@ -10,7 +10,7 @@
         </div>
       </div>
     
-      <div>
+      <div class="form__input-wrapper">
         <textarea class="form__textarea" type="text" id="description" name="description" formControlName="description"
           placeholder="Description"></textarea>
         <div class="form__alert" *ngIf="createPostForm.get('description')?.invalid && createPostForm.get('description')?.touched; else errorWrapper">
@@ -18,7 +18,7 @@
         </div>
       </div>
     
-      <div>
+      <div class="form__input-wrapper">
         <input class="form__form-control" type="text" id="tags" name="tags" formControlName="tags" placeholder="Tags">
         <div class="form__alert" *ngIf="createPostForm.get('tags')?.invalid && createPostForm.get('tags')?.touched; else errorWrapper">
           Enter tags</div>

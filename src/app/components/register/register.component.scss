@@ -1,5 +1,5 @@
 .form {
-    z-index: 20;
+    z-index: 2;
     width: 636px;
     height: 618px;
     display: flex;
@@ -110,3 +110,15 @@
     position: relative;
     background-repeat: no-repeat;
 }
+@media (max-width: 750px) {
+    .form {
+     width: 85%;
+     height: 70vh;
+     &__input-wrapper {
+         width: 100%;
+     }
+     &__form-control {
+         width: 100%;
+     }
+    } 
+ }

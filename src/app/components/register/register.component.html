@@ -3,7 +3,7 @@
   <form [formGroup]="registerForm" class="app__register form" (ngSubmit)="onRegister()" novalidate>
     <p class="form__title">Sign Up</p>
     <p class="form__notice">Enter your details to be a member</p>
-    <div>
+    <div class="form__input-wrapper">
       <input class="form__form-control" type="text" id="firstname" name="firstname" formControlName="firstname"
         placeholder="Firstname">
       <div class="form__alert"
@@ -12,7 +12,7 @@
       </div>
     </div>
   
-    <div>
+    <div class="form__input-wrapper">
       <input class="form__form-control" type="text" id="lastname" name="lastname" formControlName="lastname"
         placeholder="Lastname">
       <div class="form__alert" *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched; else errorWrapper">
@@ -20,13 +20,13 @@
       </div>
     </div>
   
-    <div>
+    <div class="form__input-wrapper">
       <input class="form__form-control" type="text" id="email" name="email" formControlName="email" placeholder="Email">
       <div class="form__alert" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched; else errorWrapper">
         Enter valid email</div>
     </div>
   
-    <div>
+    <div class="form__input-wrapper">
       <input class="form__form-control" type="password" id="password" name="password" formControlName="password"
         placeholder="Password">
       <div class="form__alert" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched; else errorWrapper">

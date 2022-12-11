@@ -3,18 +3,18 @@
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="app__login form" novalidate>
        <p class="form__title">Sign In</p>
        <p class="form__notice">Register if you don't have an account</p>
-       <div>
+       <div class="form__input-wrapper">
           <input class="form__form-control" (ngModelChange)="onInputChange()" type="text" formControlName="username" id="username" name="username" placeholder="Username">
           <div class="form__alert" *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched; else errorWrapper">
               Enter username</div>
         </div>
-    <div>
+    <div class="form__input-wrapper">
       <input class="form__form-control" (ngModelChange)="onInputChange()" type="email" formControlName="email" id="email" name="email" placeholder="E-mail">
       <div class="form__alert" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched; else errorWrapper">
           Enter valid email</div>
     </div>
 
-    <div>
+    <div class="form__input-wrapper">
       <input class="form__form-control"  (ngModelChange)="onInputChange()" type="password" formControlName="password" id="password" name="password" placeholder="Password">
       <div class="form__alert" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched; else errorWrapper">
           Password must be at least 6 characters</div>

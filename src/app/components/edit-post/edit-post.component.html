@@ -29,7 +29,7 @@
         </div>
       </div>
     
-      <div>
+      <div class="form__input-wrapper">
         <textarea class="form__textarea" type="text" id="description" name="description" formControlName="description"
         [(ngModel)]="post.description" [value]="post.description" placeholder="Description"></textarea>
         <div class="form__alert" *ngIf="editForm.get('description')?.invalid && editForm.get('description')?.touched; else errorWrapper">
@@ -37,7 +37,7 @@
         </div>
       </div>
     
-      <div>
+      <div class="form__input-wrapper">
         <input class="form__form-control" type="text" id="tags" name="tags" formControlName="tags" [(ngModel)]="post.tags" [value]="post.tags" placeholder="Tags" >
         <div class="form__alert" *ngIf="editForm.get('tags')?.invalid && editForm.get('tags')?.touched; else errorWrapper">
           Enter tags</div>

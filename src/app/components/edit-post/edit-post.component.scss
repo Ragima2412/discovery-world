@@ -1,6 +1,6 @@
 
 .form {
-    z-index: 20;
+    z-index: 5;
     width: 636px;
     height: 760px;
     display: flex;
@@ -239,5 +239,20 @@
         cursor: pointer;
         width: 100%;
     }
-
 }
+@media (max-width: 750px) {
+    .form {
+     width: 85%;
+     height: 85vh;
+     &__input-wrapper {
+         width: 100%;
+     }
+     &__form-control,
+     &__textarea {
+         width: 100%;
+     }
+     &__submit-btn {
+        margin-right: 10px;
+     }
+    } 
+ }

@@ -1,10 +1,12 @@
 
 <swiper
+[config]="swiperConfig"
 [slidesPerView]="3"
 [navigation]="true"
 [keyboard]="{
   enabled: true
 }"
+
 [virtual]="true"
 class="my-swiper"
 (swiper)="setSwiperInstance($event)"

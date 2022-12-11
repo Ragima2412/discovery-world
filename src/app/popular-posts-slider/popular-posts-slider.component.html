@@ -1,6 +1,11 @@
 <swiper [slidesPerView]="3" [navigation]="true" [keyboard]="{
   enabled: true
-}" [virtual]="true" class="swiper" (swiper)="setSwiperInstance($event)" [slidesPerView]="3" [spaceBetween]="0"
+}" [virtual]="true"
+ class="swiper"
+  (swiper)="setSwiperInstance($event)" 
+  [slidesPerView]="3" 
+  [spaceBetween]="0" 
+  [config]="swiperConfig"
   [navigation]="{}" [scrollbar]="{ draggable: true }" [watchSlidesProgress]="true">
   <ng-template swiperSlide *ngFor="let post of posts">
     <div class="popular-post" (click)="onClick(post)">

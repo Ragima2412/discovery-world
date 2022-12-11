@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -9,7 +9,6 @@ const _ = require("lodash");
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-    // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent implements OnInit {
   public isAuth: boolean = false;
@@ -28,17 +27,14 @@ export class NavbarComponent implements OnInit {
       .subscribe(val => {
         const userData = JSON.parse(val);
         if(userData) {
-          this.user = _.cloneDeep(userData?.user);          //clear
-          this.isAuth = _.cloneDeep(userData?.isAuth);      //clear
+          this.user = _.cloneDeep(userData?.user); 
+          this.isAuth = _.cloneDeep(userData?.isAuth);
           this.changeDetectorRef.markForCheck();           
         } else {  
           this.isAuth = false;
           this.user = {} as User;
         }
-       })
-
-      window.addEventListener('storage',(event) => {
-    })
+       })     
    }
 
   ngOnInit(): void {
@@ -51,19 +47,15 @@ export class NavbarComponent implements OnInit {
         const userData = JSON.parse(val);        
         this.user = userData?.user;
         this.isAuth = userData?.isAuth;
-        // this.changeDetectorRef.markForCheck();
       } else {
         this.isAuth = false;
         this.user = {} as User;
       }
-     })
-    window.addEventListener('storage',(event) => {
-    })
+     })   
   }  
   onLogout() {   
     this.storageService.clear();
-  } 
-
+  }  
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();

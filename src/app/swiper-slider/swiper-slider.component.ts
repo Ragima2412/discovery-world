@@ -41,4 +41,27 @@ posts: Post[];
   onClick(post: Post) {
     this.router.navigate([`posts/view/${post.id}`])
   }
+  
+  swiperConfig: any = {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      1100: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1450: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    }
+}
 }

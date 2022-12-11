@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #333;
-    width: 24%;
+    width: 450px;
     padding: 15px;
     margin-bottom: 30px;
   }
@@ -60,21 +60,11 @@
     border: 1px solid #eceaea;
     border-radius: 0px;
     padding: 10px 20px;
-    // min-width: 100%;
     color: #444444;
     height: auto;
     margin-bottom: 0px;
     box-shadow: none;
   }
-
-  &__search-icon {
-    // position: absolute;
-    // top: 10px;
-    // left: 20px;
-    // width: 20px;
-    // height: 20px;
-  }
-
   input:focus,
   select:focus {
     outline: none !important;
@@ -223,7 +213,6 @@
   user-select: none;
 }
 
-/* The actual popup */
 .popup .popuptext {
   visibility: hidden;
   width: 207px;
@@ -264,5 +253,74 @@
 
   to {
     opacity: 1;
+  }
+}
+@media(max-width: 1340px) {
+  .posts {
+    &__list {
+      
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+    }
+    &__new-post {
+      align-self:inherit;
+    }
+  }
+}
+@media(max-width: 960px) {
+ .posts {
+justify-content: center;
+padding: 10px auto;
+  &__header {
+       width: 100%;
+       padding: 10px 20px;
+       flex-wrap: wrap;
+       flex-direction: column;
+  }
+  &__new-post {
+    max-width: 207px;
+    padding: 10px 50px; ;
+    margin-bottom: 20px;
+    align-self: flex-center;
+  }
+  &__search-wrapper{
+   width: 60%;
+  } 
+ }
+
+}
+@media(max-width: 782px) {
+  .posts {
+    &__search-wrapper{
+      width: 90%;
+     }
+     &__search-title {
+      h3:after {
+        width: 400%;
+      }
+     }
+  }
+  .post {
+    width: 300px;
+   }
+}
+@media(max-width: 662px) {
+  .posts {   
+     &__search-title {
+      h3:after {
+        width: 200%;
+      }
+     }
+  }
+}
+
+@media(max-width: 451px) {
+  .posts {   
+     &__search-title {
+      h3:after {
+       width: 100px;
+      }
+     }
   }
 }

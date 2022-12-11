@@ -11,20 +11,8 @@
         <h3>Search</h3>
       </div>
         <input class="posts__search" type="text" placeholder="Enter the place you want to search" [(ngModel)]="cityName">
-    </div> 
-    
-    
+    </div>   
   </div>
-
-  <!-- <div class="posts__pages-table">
-    <label class="posts__pages-label" for="noOfRows">Posts per Page</label>  
-      <select class="posts__pages-selector"  style=" margin-top: -5px; color: green; height:30px; background:white; display: block; border-radius: 5px; border: 1px solid #32a8a6; box-shadow: none;" name="noOfRows" (change)="onTableSizeChange($event)" class="form-select form-select-sm">
-        <option style=" margin-top: -5px; ;color: green; height:30px; background:white; display: block; border-radius: 5px; border: 1px solid #32a8a6; box-shadow: none;" *ngFor="let size of tableSize" [ngValue]="size">
-          {{ size }}
-        </option>
-      </select> 
-  </div> -->
-
   <div class="posts__no-item-wrapper" *ngIf="isLoading == false && !posts.length">
  
     <p class="posts__no-item">No item to display</p>

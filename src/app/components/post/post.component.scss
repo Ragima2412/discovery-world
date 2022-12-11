@@ -349,3 +349,20 @@ $brand-color: rgba(220, 226, 226, 0.7);
     opacity: 1;
   }
 }
+@media (max-width: 1260px) {
+  .post {
+    width: 470px;
+   }
+}
+
+@media (max-width: 610px) {
+  .post {
+    width: 400px;
+   }
+}
+
+@media (max-width: 490px) {
+  .post {
+    width: 290px;
+   }
+}

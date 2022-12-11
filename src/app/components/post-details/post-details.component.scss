@@ -265,7 +265,6 @@
     color: #fff;
     transition: hover ease-in-out .3s;
     background: #d60d45;
-    border: 1px solid #d60d45;
     font-size: 15px;
 
     &:hover {
@@ -278,8 +277,6 @@
 
   &__warning {
     margin-top: 10px;
-    // color: #d60d45;
-    // font-size: 14px;
     width: 168px;
     background-color: #D60D45;
     color: #fff;
@@ -289,4 +286,35 @@
     z-index: 1;
     font-size: 14px;
   }
+}
+
+@media (max-width: 950px) {
+  .detailed-post {
+    padding: 20px 0px;
+    &__createdIcon {
+      width: 55px;
+      height: 55px;
+    }
+
+    &__comments-wrapper {
+      flex-direction: column;
+    }
+
+    &__comments-icon {
+      min-width: none;
+      min-height: none;
+      width: 55px;
+      height: 55px;
+      align-self: left;
+    }
+
+    &__comments-content {
+      width: 100%;
+    }
+
+    &__edit {
+      margin-bottom: 15px;
+    }
+  }
+
 }

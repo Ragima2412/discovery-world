@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewChildren } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -14,7 +14,6 @@ const _ = require("lodash");
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostsComponent implements PagingConfig, OnInit {
 
@@ -41,7 +40,7 @@ export class PostsComponent implements PagingConfig, OnInit {
     private router: Router,
     private userDataService: UserDataService,
   ) {
-    this.pagingConfig.itemsPerPage = 8;
+    this.pagingConfig.itemsPerPage = 9;
     this.pagingConfig.currentPage = 1;
   }
   
@@ -85,9 +84,9 @@ export class PostsComponent implements PagingConfig, OnInit {
     this.storageService.getItem('userData').subscribe(val => {
       const userData = JSON.parse(val);
       if (userData) {
-        this.user = _.cloneDeep(userData?.user);          //clear
-        this.isAuth = _.cloneDeep(userData?.isAuth);      //clear
-        this.changeDetectorRef.markForCheck();            //clear
+        this.user = _.cloneDeep(userData?.user); 
+        this.isAuth = _.cloneDeep(userData?.isAuth); 
+        this.changeDetectorRef.markForCheck();    
       } else {
         this.isAuth = false;
         this.user = {} as User;
@@ -114,5 +113,4 @@ export class PostsComponent implements PagingConfig, OnInit {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
 }

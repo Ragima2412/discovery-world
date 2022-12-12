@@ -12,22 +12,21 @@ export class WeatherComponent implements OnInit {
   public currentWeather: any;
   public location: any;
   public celcMark = String.fromCodePoint(8451);
-  
+
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
     this.getData();
-    console.log(this.weatherData, this.location,this.currentWeather)
+    console.log(this.weatherData, this.location, this.currentWeather)
   }
 
-getData() {
-  let weekDays = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
- this.storageService.getItem('cityData').subscribe(val => { 
-  let data = JSON.parse(val);
-  this.weatherData = data.forecast.forecastday;
-  this.currentWeather = data.current;
-  this.location = data.location;
- })
-}
-
+  getData() {
+    let weekDays = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+    this.storageService.getItem('cityData').subscribe(val => {
+      let data = JSON.parse(val);
+      this.weatherData = data.forecast.forecastday;
+      this.currentWeather = data.current;
+      this.location = data.location;
+    })
+  }
 }

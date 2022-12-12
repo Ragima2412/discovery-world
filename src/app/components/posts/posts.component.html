@@ -2,39 +2,35 @@
 
   <div class="posts__header">
     <button class="posts__new-post" href="posts/add" (click)="onNewPostClick()">New Post</button>
-    <span  class="tooltip-toggle popup" aria-label="Sample text for your tooltip!" tabindex="0">
-         <span class="popuptext" id="newPostPopup">Please register or login</span>                         
+    <span class="tooltip-toggle popup" aria-label="Sample text for your tooltip!" tabindex="0">
+      <span class="popuptext" id="newPostPopup">Please register or login</span>
     </span>
     <div class="posts__search-wrapper">
-     
+
       <div class="posts__search-title">
         <h3>Search</h3>
       </div>
-        <input class="posts__search" type="text" placeholder="Enter the place you want to search" [(ngModel)]="cityName">
-    </div>   
+      <input class="posts__search" type="text" placeholder="Enter the place you want to search" [(ngModel)]="cityName">
+    </div>
   </div>
   <div class="posts__no-item-wrapper" *ngIf="isLoading == false && !posts.length">
- 
+
     <p class="posts__no-item">No item to display</p>
   </div>
-  <div  *ngIf="isLoading == true">
+  <div *ngIf="isLoading == true">
     <app-spinner></app-spinner>
   </div>
 
-  <!-- <div class="posts__error-wrapper" *ngIf="!isLoading && errorMessage">
-   <p class="posts__error">{{errorMessage}}</p>
-  </div> -->
-
   <div class="posts__list">
-    <ng-container *ngFor="let post of (posts | filter: cityName)| paginate : pagingConfig; let i = index" >
+    <ng-container *ngFor="let post of (posts | filter: cityName)| paginate : pagingConfig; let i = index">
       <div class="posts__item" *ngIf="post">
         <app-post [user]='user' [post]='post'></app-post>
       </div>
-    
+
     </ng-container>
   </div>
   <div class="posts__pagination-controls">
-    <pagination-controls  previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
     </pagination-controls>
   </div>
 </div>

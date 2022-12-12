@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, InjectionToken, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {  Subject, takeUntil } from 'rxjs';
 import { GetCityDataService } from 'src/app/services/get-city-data/get-city-data.service';
@@ -86,12 +86,6 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     }, (err) => {
       this.errorMessage = `Error: ${err}`;
     });
-    // this.comments = this.comments?.map((com: any) => {
-    //   let user = this.users.find(u => u.id === com.userId);
-    //   return { ...com, user }
-    // }).sort((a: any, b: any) => b.dateOfCreate - a.dateOfCreate)
-    // this.tags = this.post?.tags?.split(',').map(tag => `#${tag}`);
-    // this.loading = true;
     this.activatedRoute.paramMap.subscribe((param) => {
       this.postId = param.get('postId');
     });

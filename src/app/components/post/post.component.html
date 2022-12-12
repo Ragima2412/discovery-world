@@ -28,25 +28,13 @@
                                    <span class="popuptext" id="myPopup">Please register or login</span>
                                    <img class="post__icon" [attr.src]= "[isLiked === true ? '../../../assets/liked.png' : '../../../assets/unliked.png']"  alt="likes" />
                                    {{this.likes.length - 1}}                          
-                                   <!-- <div class="post__user-liked" id="user-liked" *ngIf="usersIconList?.length">
+                                   <div class="post__user-liked" id="user-liked" *ngIf="usersIconList?.length">
                                         <img class="post__user-liked-icon" *ngFor="let userIcon of usersIconList" src={{userIcon}} alt="icon"/>
-                                   </div> -->
+                                   </div>
                               </span>
                          </div>
                     </div>
-
                </div>
-               <!-- <span *ngIf="user.id" (click)="onEdit($event, post)"><img class="post__icon"   src="../../../assets/icons/edit.png" alt="edit" /></span>  
-               <span *ngIf="user.id" (click)="onDelete($event,post)"><img class="post__icon" src="../../../assets/icons/delete.png" alt="delete" /></span>  -->
-<!--              
-               <div *ngIf="user.id" class="post__add-comment comment"  [style.visibility]="!isHidden ? 'visible' : 'hidden'">
-                     <textarea placeholder="Add comment" class="comment__input" [(ngModel)]="newComment" style="color:rgba(106, 104, 104, 0.8); font-size: 14px" (click)="$event.stopPropagation()"></textarea>
-                    <div class="comment__buttons">
-                         <button type="button" class="comment__button" (click)="onCancelClick($event)">Cancel</button>
-                         <button type="button" class="comment__button" (click)="onCommentClick($event)">Comment</button>
-                    </div>
-              
-               </div>   -->
           </div>
      </div>
 </div>

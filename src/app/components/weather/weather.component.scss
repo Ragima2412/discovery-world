@@ -138,6 +138,7 @@
     text-transform: uppercase;
     margin-right: 10px;
   }
+
   &__temp {
     margin-right: 40px;
     width: 120px;
@@ -183,15 +184,17 @@
       padding: 0px;
       width: 100%;
     }
-  &__add-info-item  {
-    flex-wrap: wrap;
+
+    &__add-info-item {
+      flex-wrap: wrap;
       font-size: 16px;
       align-self: flex-start;
       gap: 5px;
-  }
-    &__current-add-info   {
+    }
+
+    &__current-add-info {
       flex-wrap: wrap;
-      font-size: 16px;     
+      font-size: 16px;
       align-self: flex-end;
       gap: 5px;
       margin-left: 0;
@@ -228,17 +231,21 @@
     }
   }
 }
+
 @media(max-width: 1350px) {
   .weather {
     padding: 20px;
-    &__day {          
+
+    &__day {
       padding: 10px 0;
     }
   }
 }
+
 @media (max-width: 1096px) {
   .weather {
     padding: 15px 30px;
+
     &__current {
       padding-left: 60px;
     }
@@ -246,19 +253,23 @@
     &__current-temperature {
       padding-left: 20px;
     }
+
     &__days {
       padding-left: 60px;
     }
+
     &__day {
       flex-wrap: wrap;
       padding: 15px;
       gap: 20px 0;
       padding: 10px 0;
     }
+
     &__add-info {
       gap: 0;
       margin-left: 0px;
     }
+
     &__add-info-item {
       margin-right: 10px;
     }
@@ -286,12 +297,11 @@
     }
 
     &__current-temperature {
-      //  align-self: start;
       font-size: 24px;
       margin-top: 40px;
       text-align: center;
     }
- 
+
 
     &__current-add-info {
       gap: 20px;
@@ -305,8 +315,9 @@
     &__row {
       justify-content: center;
     }
+
     &__days {
-     padding-left: 0;  
+      padding-left: 0;
     }
   }
 }
@@ -315,42 +326,51 @@
   .app__weather-wrapper {
     padding-top: 120px;
   }
+
   .weather {
- 
+
     &__current {
       padding-left: 0px;
     }
+
     &__current-temperature {
       padding-left: 10px;
     }
+
     &__current-add-info-item {
       display: inline-block;
       width: 100%;
       text-align: center;
       font-size: 14px;
-    
+
     }
+
     &__current-image {
       padding-left: 40px;
+
       p {
-        margin: 10px 0 15px ;
+        margin: 10px 0 15px;
       }
-    } 
+    }
+
     &__location-details {
       align-items: center;
       margin: 15px 0 0 10px;
     }
+
     &__row {
       align-items: center;
     }
-   &__day,
-   &__temp {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-   }
-   &__weekday{
-    font-weight: 600;
-   }
+
+    &__day,
+    &__temp {
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+    }
+
+    &__weekday {
+      font-weight: 600;
+    }
   }
 }

@@ -1,16 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { iconsUrl } from 'src/assets/iconsUrl';
-import { Database, set, ref, update, onValue, remove } from '@angular/fire/database';
+import { Database, set, ref } from '@angular/fire/database';
 import { Router } from '@angular/router';
-import { formatCurrency } from '@angular/common';
 import { StorageService } from 'src/app/services/storage-service/storage.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent implements OnInit {
 
@@ -49,10 +47,8 @@ export class RegisterComponent implements OnInit {
       password: newUser.password
     });    
     this.router.navigate(['/posts']);
-    let userData = JSON.stringify({ user: newUser, isAuth: true})
-    // localStorage.setItem('userData', JSON.stringify(userData));
-    this.storageService.setItem('userData', userData)
-    // localStorage.setItem('isAuth', JSON.stringify(true));
+    let userData = JSON.stringify({ user: newUser, isAuth: true});
+    this.storageService.setItem('userData', userData);
     this.registerForm.reset({
       firstname: '',
       lastname:'',

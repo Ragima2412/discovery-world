@@ -1,6 +1,5 @@
 import { WeatherComponent } from './components/weather/weather.component';
 import { MapComponent } from './components/map/map.component';
-import { BehaviorSubject } from 'rxjs';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,19 +22,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
-import { PostsComponent } from './components/posts/posts.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { PostComponent } from './components/post/post.component';
 import { PostsModule } from './components/posts.module';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { LikesComponent } from './components/likes/likes.component';
 import { FilterUserPipe } from './pipes/filter-user.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { BackArrowComponent } from './components/back-arrow/back-arrow.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { VideoComponent } from './components/video/video.component';
@@ -43,6 +39,7 @@ import { SwiperModule } from 'swiper/angular';
 import { SwiperSliderComponent } from './swiper-slider/swiper-slider.component';
 import { PopularPostsSliderComponent } from './popular-posts-slider/popular-posts-slider.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -60,7 +57,6 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     DateAgoPipe,
     LikesComponent,
     FilterUserPipe,
-    BackArrowComponent, 
     MapComponent, 
     WeatherComponent,
     VideoComponent,
@@ -79,6 +75,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     NgxPaginationModule,
     PostsModule,
     SwiperModule,
+    SharedModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),

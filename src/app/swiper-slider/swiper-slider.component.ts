@@ -18,8 +18,6 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 export class SwiperSliderComponent implements OnInit {
 @Input()
 posts: Post[];
-
-  
   slides$ = new BehaviorSubject<string[]>(['']);
 
   constructor(

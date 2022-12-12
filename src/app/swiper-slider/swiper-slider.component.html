@@ -12,11 +12,8 @@ class="my-swiper"
 (swiper)="setSwiperInstance($event)"
 [slidesPerView]="3" [spaceBetween]="0" [navigation]="{}"
  [scrollbar]="{ draggable: true }" [watchSlidesProgress]="true"
-
 >
-<!-- <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i"> -->
 <ng-template swiperSlide *ngFor="let post of posts">
-
   <div class="swiper-slide-container slider-item" (click)="onClick(post)">
   <div class="slider-item__image-wrapper" >
     <img class="slider-item__image" src="{{'data:image/jpg;base64,' + post.photo}}" alt="photo" />
@@ -32,4 +29,5 @@ class="my-swiper"
   </div>
   </div>
 </ng-template>
+
 </swiper>

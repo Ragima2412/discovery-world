@@ -7,16 +7,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostsDataService } from '../services/posts-data/posts-data.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from '../pipes/filter.pipe';
-import { SpinnerComponent } from './spinner/spinner.component';
-
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
     declarations: [
         PostComponent,
-        PostsComponent, 
+        PostsComponent,
         FilterPipe,
-        SpinnerComponent,
     ],
     providers: [PostsDataService],
-    imports: [CommonModule, FormsModule, HttpClientModule, FormsModule, NgxPaginationModule, ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        HttpClientModule,
+        FormsModule,
+        NgxPaginationModule,
+        SharedModule   
+    ]
 })
-  export class PostsModule {}
+export class PostsModule { }

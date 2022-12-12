@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {  ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { PostsDataService } from 'src/app/services/posts-data/posts-data.service';
 import { Post } from '../models/post';
@@ -8,32 +8,41 @@ const _ = require("lodash");
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
 
   private destroy$: Subject<void> = new Subject<void>();
   public posts:Post[];
   public popularPosts: Post[];
+  public isPublicPostsLoading: boolean = false;
+  public isAllPostsLoading: boolean = false;
   constructor(
     private postDataService: PostsDataService,
     private changeDetectorRef: ChangeDetectorRef,
   ) {}
   
   ngOnInit(): void {
+    this.isPublicPostsLoading = true;
+    this.isAllPostsLoading = true;
     this.getPosts();
     this.onBannerSliderMode();
     this.parallaxEffect();
     this.quotesSlideShow();
   }
 
-  getPosts() {      
+  getPosts() {  
+    this.isPublicPostsLoading = true; 
+    this.isAllPostsLoading = true;   
     this.postDataService.posts$
       .pipe(
         takeUntil(this.destroy$)
       )
       .subscribe((posts: Post[]) => {  
         this.getPopularPosts(posts);
+        if(posts.length) {
+          this.isPublicPostsLoading = false;
+          this.isAllPostsLoading = false;
+        }
         let postsList: Post[] = Array.from({ length: 10 });
         this.posts = postsList.map((el: any )=> {
           el = [...posts];
@@ -60,7 +69,6 @@ export class HomeComponent implements OnInit {
     let btns = document.querySelectorAll('.btn');
     let currentSlide = 1;
 
-    //JS for manual navigation
     let manualNav = function (manual: any) {
       slides.forEach((slide) => {
         slide.classList.remove('active');
@@ -110,7 +118,6 @@ export class HomeComponent implements OnInit {
     const parallax = document.getElementById('parallax')! as HTMLDivElement;
     window.addEventListener('scroll', () => {
       let offSet = window.pageYOffset;
-      // console.log(offSet * 0.7)
       parallax.style.backgroundPositionY = offSet * 1 + 'px';
     })
   }
@@ -147,6 +154,5 @@ export class HomeComponent implements OnInit {
         plusSlides(1);
       }, 4000);
     }
-
   }
 }

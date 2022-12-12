@@ -44,17 +44,22 @@
                <div class="btn"></div>
             </div>
          </div> 
+   </div>   
+   <div class="home__container popular-posts">
+      <h2 class="popular-posts__title">All Posts</h2>
+      <div class="popular-posts__icon-wrapper">
+         <img class="popular-posts__icon" src="../../../assets/icons/diamond.png" alt="diamond" />
+      </div>
+      <p class="popular-posts__text">Start your journey with our top travelers and their stories</p>    
+      <div class="popular-posts__slider">
+         <div *ngIf="isAllPostsLoading == true">
+            <app-spinner [topPosition]="['30%']"></app-spinner>
+         </div>
+         <div *ngIf="posts.length && isPublicPostsLoading == false">                   
+            <app-swiper-slider [posts]="posts"></app-swiper-slider>                            
+         </div>
+       </div>  
    </div>
-   
-            <div class="home__container popular-posts">
-               <h2 class="popular-posts__title">All Posts</h2>
-               <div class="popular-posts__icon-wrapper">
-                  <img class="popular-posts__icon" src="../../../assets/icons/diamond.png" alt="diamond" />
-               </div>
-               <p class="popular-posts__text">Start your journey with our top travelers and their stories</p>
-              <app-swiper-slider [posts]="posts"></app-swiper-slider>
-            </div>
-
    <div class="home__parallax-container parallax">
       <div class="parallax__wrapper" >
          <div class="parallax__item ">
@@ -70,7 +75,12 @@
                    </div>
                 </div>
                 <div class="posts__slider">
-                   <app-popular-posts-slider [posts]="popularPosts"></app-popular-posts-slider>
+                  <div *ngIf="isPublicPostsLoading == true">
+                     <app-spinner [topPosition]="['60%']"></app-spinner>
+                  </div>
+                  <div *ngIf="posts.length && isPublicPostsLoading == false">                   
+                     <app-popular-posts-slider [posts]="popularPosts"></app-popular-posts-slider>                     
+                  </div>
                 </div>
             </div>
          </div>

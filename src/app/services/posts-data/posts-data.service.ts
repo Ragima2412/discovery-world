@@ -1,5 +1,3 @@
-import { throwError } from 'rxjs';
-
 import { Injectable } from '@angular/core';
 import { Database, set, ref, update, onValue, remove } from '@angular/fire/database';
 import { BehaviorSubject } from 'rxjs';
@@ -21,7 +19,7 @@ export class PostsDataService {
   constructor(
     public database: Database,
   ) {
-    const starCountRef = ref(this.database, '/posts');             //GET
+    const starCountRef = ref(this.database, '/posts');   
      onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       if(data) {
@@ -38,7 +36,7 @@ export class PostsDataService {
  
 
   public getPost(postId:string) {
-  const starCountRef = ref(this.database, 'posts/' + postId);             //GET
+  const starCountRef = ref(this.database, 'posts/' + postId);
   onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
   this.post = data;
@@ -47,7 +45,7 @@ export class PostsDataService {
   }
 
   public updatePost (post: Post) {
-    update(ref(this.database, 'posts/' + post.id), {                         //   UPDATE
+    update(ref(this.database, 'posts/' + post.id), { 
       ...post,
       likes: post.likes
     });
@@ -56,7 +54,7 @@ export class PostsDataService {
 
   public addVideoId(post: Post, videoId: string) {
     console.log('addVideoId', post, videoId)
-    update(ref(this.database, 'posts/' + post.id), {                         //   UPDATE
+    update(ref(this.database, 'posts/' + post.id), { 
       ...post,
        videoId: videoId
     });
@@ -68,7 +66,7 @@ export class PostsDataService {
 
   public updateLikes(post: Post, userId: number) {
     let likeId= new Date().getUTCMilliseconds();
-    update(ref(this.database, 'posts/' + post.id + '/likes'), {                        //   UPDATE
+    update(ref(this.database, 'posts/' + post.id + '/likes'), { 
       [userId]: {  
       id: likeId,
       userId} 
@@ -82,7 +80,7 @@ export class PostsDataService {
   public addComment(post: Post, userId: number, newComment: string) {
     let commentId= new Date().getUTCMilliseconds();
     let dateOfCreate = new Date().toString();
-    update(ref(this.database, 'posts/' + post.id + '/comments'), {                        //   UPDATE
+    update(ref(this.database, 'posts/' + post.id + '/comments'), {
       [commentId]: {  
       id: commentId,
       userId,

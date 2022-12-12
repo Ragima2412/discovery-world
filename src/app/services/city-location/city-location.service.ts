@@ -1,5 +1,4 @@
 import { StorageService } from './../storage-service/storage.service';
-import { CityName } from './../../components/models/getCityName.model';
 import { BehaviorSubject } from 'rxjs';
 import { GetCityDataService } from 'src/app/services/get-city-data/get-city-data.service';
 import { Injectable } from '@angular/core';

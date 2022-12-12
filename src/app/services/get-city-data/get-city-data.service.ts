@@ -1,6 +1,6 @@
 import { handleErrorMessage } from './../../utils/handleErrorMessage';
 import { StorageService } from 'src/app/services/storage-service/storage.service';
-import { map, Observable, BehaviorSubject, catchError } from 'rxjs';
+import { Observable, BehaviorSubject, catchError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 

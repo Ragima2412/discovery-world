@@ -1,7 +1,7 @@
 import {  ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
+import { Post } from 'src/app/components/models/post';
 import { PostsDataService } from 'src/app/services/posts-data/posts-data.service';
-import { Post } from '../models/post';
 const _ = require("lodash");
 
 @Component({

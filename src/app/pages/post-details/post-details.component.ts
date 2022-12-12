@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {  Subject, takeUntil } from 'rxjs';
+import { Post } from 'src/app/components/models/post';
+import { User } from 'src/app/components/models/user';
 import { GetCityDataService } from 'src/app/services/get-city-data/get-city-data.service';
 import { PostsDataService } from 'src/app/services/posts-data/posts-data.service';
 import { StorageService } from 'src/app/services/storage-service/storage.service';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
-import { Post } from '../models/post';
-import { User } from '../models/user';
 import { VideoDataService } from 'src/app/services/video-data/video-data.service';
 const _ = require("lodash");
 
@@ -104,7 +104,7 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     } else {
       console.log('Something went wrong!!!')
     }
-    /////////////////////////////////////////////////////////////// вынести в отдельную функцию
+  
     this.storageService.getItem('post').subscribe(val => {
       let obj = JSON.parse(val);
       this.getCityDataService.getData(obj.cityName).subscribe(val => {  
@@ -112,7 +112,7 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
         this.storageService.setItem('cityData',JSON.stringify(val) )
       }); 
     }) 
-     ////////////////////////////////////////////////////////////////////////////   
+   
   }
   onCommentClick($event: any) {
     this.isHidden = !this.isHidden;
@@ -133,12 +133,13 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
 
   onEdit($event: any, post: Post) {
     $event.stopPropagation();
-    this.router.navigate([`posts/edit/${post.id}`])
+    this.router.navigate([`posts/edit/${post.id}`]);
   }
 
   onDelete($event: any, post: Post) {
     $event.stopPropagation();
     this.postsDataService.removePost(this.post.id);
+    this.router.navigate(['posts']);
   }
   
   ngOnDestroy(): void {
@@ -146,15 +147,15 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
   onLocation(cityName: string) {
-    this.router.navigate(['/map'])  
+    this.router.navigate(['/map']);  
   }
 
   onWeatherClick() { 
-    this.router.navigate(['/weather'])   
+    this.router.navigate(['/weather']); 
   } 
 
   onVideoClick() {
-    this.router.navigate(['/video']) 
+    this.router.navigate(['/video']); 
   }
 
   setVideoId() {   
@@ -164,7 +165,6 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
         this.videoDataService.getVideoId(obj.cityName).subscribe(data => {
           let result = data.items[0].id.videoId; 
           this.postsDataService.addVideoId(this.post, result);
-        //  this.storageService.setItem('post', JSON.stringify({videoId: result,...this.post}))
         })
       } 
     })       

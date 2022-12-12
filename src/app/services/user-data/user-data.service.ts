@@ -15,7 +15,7 @@ export class UserDataService {
   constructor(
     public database: Database,
   ) { 
-    const starCountRef = ref(this.database, '/users');             //GET
+    const starCountRef = ref(this.database, '/users'); 
     onValue(starCountRef, (snapshot) => {
      const data = snapshot.val();
      this.users = Object.entries(data).map(item => item[1]) as User[];

@@ -1,17 +1,17 @@
-import { VideoComponent } from './components/video/video.component';
-import { WeatherComponent } from './components/weather/weather.component';
-import { MapComponent } from './components/map/map.component';
+import { VideoComponent } from './pages/video/video.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddPostComponent } from './components/add-post/add-post.component';
-import { EditPostComponent } from './components/edit-post/edit-post.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { AddPostComponent } from './pages/add-post/add-post.component';
+import { EditPostComponent } from './pages/edit-post/edit-post.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PostsComponent } from './components/posts/posts.component';
-import { RegisterComponent } from './components/register/register.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PostDetailsComponent } from './pages/post-details/post-details.component';
+import { WeatherComponent } from './pages/weather/weather.component';
+import { MapComponent } from './pages/map/map.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},

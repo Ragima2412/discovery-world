@@ -220,7 +220,7 @@
   }
 
   &__item:nth-child(1) {
-    height: 89vh;
+    height: 97vh;
     background-image: url('https://htmldesigntemplates.com/html/yatra/bootstrap5/images/dealsbg.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -270,7 +270,7 @@
 
 .popular-posts {
   padding: 150px 0px 105px;
-  height: 95vh;
+  height: 107vh;
   margin-top: -15px;
   background-color: #fbfbfb;
 
@@ -828,21 +828,21 @@ q {
     color: #fff;
   }
 }
-
-@media (max-width: 1850px) {
-  .travel-tips {
-    display: none;
-  }
-
+@media (max-width: 1678px) {
   .events__invisible {
     padding-top: 150px;
   }
-
+  
   .gallery__invisible,
   .events__invisible,
   .footer__copyright {
     visibility: hidden;
     display: none !important;
+  }
+}
+@media (max-width: 1850px) {
+  .travel-tips {
+    display: none;
   }
 
   .gallery {
@@ -880,7 +880,7 @@ q {
   .footer {
     height: 45vh;
     padding-top: 50px;
-    margin-top: 50px;
+    margin-top: 150px;
 
     &_form {
       background-color: green;
@@ -947,3 +947,8 @@ q {
     font-weight: 700;
   }
 }
+  @media (max-width:567px) {
+  .events__title {
+    margin-top: 30px;
+  }
+  }

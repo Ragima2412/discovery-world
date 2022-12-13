@@ -243,7 +243,7 @@
 @media (max-width: 750px) {
     .form {
      width: 85%;
-     height: 85vh;
+     height: 87vh;
      &__input-wrapper {
          width: 100%;
      }
@@ -253,6 +253,9 @@
      }
      &__submit-btn {
         margin-right: 10px;
+     }
+     &__images {
+        margin-bottom: 0;
      }
     } 
  }

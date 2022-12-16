@@ -1,9 +1,9 @@
 {
   "targets": {
-    "fir-crud-discovery": {
+    "discovery-world-hosting": {
       "hosting": {
-        "firebase-crud-discovery": [
-          "fir-crud-discovery"
+        "discovery-world-hosting": [
+          "discovery-world-hosting"
         ]
       }
     }

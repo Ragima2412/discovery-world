@@ -38,13 +38,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
                 }
               ],
               "fileReplacements": [
@@ -108,8 +108,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "firebase-crud-discovery:build:production",
-            "firebaseProject": "fir-crud-discovery",
-            "firebaseHostingSite": "fir-crud-discovery"
+            "firebaseProject": "discovery-world-hosting",
+            "firebaseHostingSite": "discovery-world-hosting"
           }
         }
       }

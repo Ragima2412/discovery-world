@@ -27,7 +27,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [          
+            "styles": [
               "src/styles.scss",
               "./node_modules/swiper/swiper.scss"
             ],
@@ -108,8 +108,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "firebase-crud-discovery:build:production",
-            "firebaseProject": "discovery-world-hosting",
-            "firebaseHostingSite": "discovery-world-hosting"
+            "firebaseProject": "discovery-for-portfolio",
+            "firebaseHostingSite": "discovery-for-portfolio"
           }
         }
       }

@@ -6,9 +6,16 @@
           "discovery-world-hosting"
         ]
       }
+    },
+    "discovery-for-portfolio": {
+      "hosting": {
+        "firebase-crud-discovery": [
+          "discovery-for-portfolio"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "fir-crud-discovery"
+    "default": "discovery-for-portfolio"
   }
 }

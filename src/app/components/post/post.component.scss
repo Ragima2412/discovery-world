@@ -1,4 +1,3 @@
-
 .post {
   display: flex;
   flex-direction: column;
@@ -19,24 +18,25 @@
   box-shadow: 0 2.5rem 2rem -2rem rgba(93, 94, 95, 0.4);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.02);
   }
 
   &__user-info {
-   display: flex;
-   gap: 10px 0px;
+    display: flex;
+    gap: 10px 0px;
   }
-  
+
   &__user-icon {
     width: 18px;
     height: 18px;
     margin-right: 10px;
   }
-  
+
   &__user-name {
     color: #555;
-   align-self: flex-start;
+    align-self: flex-start;
     font-size: 15px;
   }
 
@@ -50,6 +50,7 @@
     font-weight: 700;
     width: 210px;
   }
+
   &__content {
     width: 100%;
     padding: 20px;
@@ -74,18 +75,21 @@
     min-height: 350px;
     position: relative;
   }
- &__overlay {  position: absolute;
+
+  &__overlay {
+    position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,.25);
-}
-  &__image {    
+    background: rgba(0, 0, 0, .25);
+  }
+
+  &__image {
     object-fit: cover;
     width: 100%;
     min-height: 100%;
-  } 
+  }
 
   &__title {
     text-align: start;
@@ -93,8 +97,8 @@
     color: #2c2f32;
     font-size: 21px;
     text-transform: capitalize;
-    font-weight: 600;  
-}
+    font-weight: 600;
+  }
 
   &__description {
     height: 90px;
@@ -121,10 +125,10 @@
       text-decoration: underline;
     }
   }
-  
-&__like-icons {
-  display: flex;
-}
+
+  &__like-icons {
+    display: flex;
+  }
 
   &__image {
     display: flex;
@@ -140,7 +144,7 @@
     color: rgba(106, 104, 104, 0.54);
     gap: 10px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
   }
 
   &__user-liked {
@@ -163,6 +167,7 @@
     border-radius: 50%;
     margin-left: -10px;
   }
+
   &__user-liked-icon:first-child {
     margin-left: 5px;
   }
@@ -175,8 +180,8 @@
     margin-left: 10px;
 
     &:hover~.post__user-liked {
-     visibility: visible;
-      }
+      visibility: visible;
+    }
   }
 
 }
@@ -228,28 +233,30 @@
   }
 
   textarea::-webkit-input-placeholder {
-    color:rgba(106, 104, 104, 0.8);
-        font-family: 'Roboto', sans-serif;
+    color: rgba(106, 104, 104, 0.8);
+    font-family: 'Roboto', sans-serif;
   }
-  
-  textarea:-moz-placeholder { /* Firefox 18- */
-    color:rgba(106, 104, 104, 0.8);
-        font-family: 'Roboto', sans-serif;  
+
+  textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(106, 104, 104, 0.8);
+    font-family: 'Roboto', sans-serif;
   }
-  
-  textarea::-moz-placeholder {  /* Firefox 19+ */
-    color:rgba(106, 104, 104, 0.8);
-        font-family: 'Roboto', sans-serif;  
+
+  textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(106, 104, 104, 0.8);
+    font-family: 'Roboto', sans-serif;
   }
-  
+
   textarea:-ms-input-placeholder {
-    color:rgba(106, 104, 104, 0.8);
-        font-family: 'Roboto', sans-serif;  
+    color: rgba(106, 104, 104, 0.8);
+    font-family: 'Roboto', sans-serif;
   }
-  
+
   textarea::placeholder {
-    color:rgba(106, 104, 104, 0.8);
-        font-family: 'Roboto', sans-serif;  
+    color: rgba(106, 104, 104, 0.8);
+    font-family: 'Roboto', sans-serif;
   }
 
   &__input {
@@ -320,7 +327,7 @@ $brand-color: rgba(220, 226, 226, 0.7);
   bottom: 125%;
   left: 50%;
   margin-left: -80px;
-  
+
 }
 
 .popup .show {
@@ -349,20 +356,21 @@ $brand-color: rgba(220, 226, 226, 0.7);
     opacity: 1;
   }
 }
+
 @media (max-width: 1260px) {
   .post {
     width: 470px;
-   }
+  }
 }
 
 @media (max-width: 610px) {
   .post {
     width: 400px;
-   }
+  }
 }
 
 @media (max-width: 490px) {
   .post {
     width: 290px;
-   }
+  }
 }

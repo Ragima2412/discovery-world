@@ -35,14 +35,15 @@ public post: Post;
 @Input()
 public user: User;
 
-  constructor(
-    private router: Router,
-    private postsDataService: PostsDataService,
-    private storageService: StorageService,
-    private changeDetectorRef: ChangeDetectorRef
-    ) { }
+constructor(
+  private router: Router,
+  private postsDataService: PostsDataService,
+  private storageService: StorageService,
+  private changeDetectorRef: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
+    console.log("+++++++++++++++++++++>", this.post)
     this.likes = Object.values(this.post.likes);
     this.comments = Object.values(this.post.comments);
     this.tags = this.post.tags.split(',').map(tag  => `#${tag}`);

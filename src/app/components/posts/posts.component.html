@@ -22,8 +22,8 @@
   </div>
 
   <div class="posts__list">
-    <ng-container *ngFor="let post of (posts | filter: cityName)| paginate : pagingConfig; let i = index">
-      <div class="posts__item" *ngIf="post">
+    <ng-container *ngFor="let post of posts | filter: cityName | paginate : pagingConfig; let i = index">
+      <div class=" posts__item" *ngIf="post">
         <app-post [user]='user' [post]='post'></app-post>
       </div>
 

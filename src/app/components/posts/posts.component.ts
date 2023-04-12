@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Injectable, OnInit } from '@angular/core';
 import { User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -9,20 +9,20 @@ import { PagingConfig } from '../models/paging-config.model';
 import { Post } from '../models/post';
 const _ = require("lodash");
 
-
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements PagingConfig, OnInit {
-
-  title = 'ngx-paging-sample';
   cityName: string;
-  currentPage: number = 1;
+  
+  title = 'ngx-paging-sample';
+  currentPage:number  = 1;
   itemsPerPage: number = 5;
   totalItems: number = 0;
-  tableSize: number[] = [8, 12, 16];
+
+  tableSize: number[] = [5, 10, 15];
   pagingConfig: PagingConfig = {} as PagingConfig;
 
   private destroy$: Subject<void> = new Subject<void>();
@@ -40,24 +40,29 @@ export class PostsComponent implements PagingConfig, OnInit {
     private router: Router,
     private userDataService: UserDataService,
   ) {
-    this.pagingConfig.itemsPerPage = 9;
-    this.pagingConfig.currentPage = 1;
+   
+    // this.getPosts();  
+    this.pagingConfig = {
+      itemsPerPage: this.itemsPerPage,
+      currentPage: this.currentPage,
+      totalItems: this.totalItems
+    }
   }
   
   ngOnInit() {
     this.isLoading = true;
     this.getUser();
-    this.getPosts();
+    this.getPosts();  
     this.getAllUser();
   }
 
   onTableDataChange(event: any) {
-    this.pagingConfig.currentPage = event;
+    this.pagingConfig.currentPage  = event;
     this.getPosts();
   }
   onTableSizeChange(event: any): void {
     this.pagingConfig.itemsPerPage = event.target.value;
-    this.pagingConfig.currentPage = 1;
+    this.pagingConfig.currentPage;
     this.getPosts();
   }
 
@@ -67,9 +72,9 @@ export class PostsComponent implements PagingConfig, OnInit {
         takeUntil(this.destroy$)
       )
       .subscribe((posts: Post[]) => {  
-        this.posts = _.cloneDeep(posts);
+        this.posts = posts;
         this.isNoItems = this.posts.length > 0 ? false : true;
-        this.pagingConfig.totalItems = posts.length;    
+        this.pagingConfig.totalItems = this.posts.length;    
         if(posts.length) {
           this.isLoading = false; 
         }
